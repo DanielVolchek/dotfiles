@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Daniel Volchek - Personal Dot Files
 
 ## HOW TO USE
