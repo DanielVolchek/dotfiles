@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Daniel Volchek - Personal Dot Files
 
 ## HOW TO USE
@@ -16,4 +14,4 @@ Watch the magic happen
 
 ## TMUX
 
-# Tmux conf comes from [Oh My Tmux](https://github.com/gpakosz/.tmux) with a few of my own modifications
+### Tmux conf comes from [Oh My Tmux](https://github.com/gpakosz/.tmux) with a few of my own modifications
