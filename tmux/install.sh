@@ -19,4 +19,3 @@ ln -s $DIR/tmux.conf ~/.tmux.conf
 ln -s $DIR/tmux.conf.local ~/.tmux.conf.local
 
 tmux source-file ~/.tmux.conf
-tmux source-file ~/.tmux.conf.local
