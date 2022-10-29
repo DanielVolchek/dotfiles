@@ -1,7 +1,17 @@
 # Daniel Volchek - Personal Dot Files
 
+## HOW TO USE
+
+Clone Into Home
+Run install.sh
+Watch the magic happen
+
 ## Different Editor Folders
 
 - NVIM -> Main Editor
-- VIM W/ Plugins -> Editor when I can't get NVIM
-- VIM W/O -> Emergency Editor in really shit scenarios
+- VIM -> Simple Vim Editor with basic plugin setup
+- VIM_NOPLUG -> Editor with nothing downloaded from the internet (kept on a flash drive for emergencies)
+
+## TMUX
+
+Tmux conf comes from [Oh My Tmux](https://github.com/gpakosz/.tmux) with a few of my own modifications
