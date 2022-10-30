@@ -20,6 +20,8 @@ keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" }) -- spli
 -- resize splits
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split Equal Width" }) -- split equal width
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" }) -- toggle split window maximization
+-- rotate split
+keymap.set("n", "<leader>sr", ":<C-u>vertical resize +2<CR>", { desc = "Rotate Split" }) -- rotate split
 
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" }) -- close split
 
@@ -28,6 +30,9 @@ keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" }) -- open 
 keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" }) -- close current tab
 keymap.set("n", "<leader>tf", ":tabn<CR>", { desc = "Go To Next Tab" }) --  go to next tab
 keymap.set("n", "<leader>tb", ":tabp<CR>", { desc = "Go To Previous Tab" }) --  go to previous tab
+
+-- fix indentation
+keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" }) --  go to previous tab
 
 --tree shortcuts
 keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = true, noremap = true, desc = "Toggle File Tree" })
