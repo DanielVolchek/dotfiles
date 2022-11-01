@@ -17,8 +17,8 @@ keymap.set("n", "<leader>bx", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" }
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
 keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
-keymap.set("n", "<leader>bx", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
--- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bD", ":bd!<CR>", { desc = "Delete Buffer" })
 
 -- splits
 -- keymap.set("n", "<leader>s_", "<C-w>v", { desc = "Split Vertically" }) -- split vertical
