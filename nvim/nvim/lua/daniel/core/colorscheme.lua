@@ -42,19 +42,21 @@
 -- 	},
 -- })
 
--- local status, _ = pcall(vim.cmd, "colorscheme dracula")
--- if not status then
--- 	print("Colorscheme not found!")
--- 	return
--- end
-
 -- set colorscheme
+-- local CUSTOM_SCHEMES = {
+-- 	"colorscheme tokyonight-dark",
+-- 	"colorscheme dracula",
+-- 	"colorscheme nightfly",
+-- }
+
 local scheme = "colorscheme nightfly"
 local status, _ = pcall(vim.cmd, scheme)
 if not status then
 	print("Colorscheme not found!")
 	return
 end
+
+-- vim.g.nightflyUnderlineMatchParen = true
 
 -- local status, _ = pcall(vim.cmd, "colorscheme NeoSolarized")
 -- if not status then

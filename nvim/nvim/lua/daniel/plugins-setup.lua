@@ -30,11 +30,14 @@ end
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
-
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	-- use("Mofiqul/dracula.nvim")
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	--colorschemes
+	use("Mofiqul/dracula.nvim")
+	use("folke/tokyonight.nvim")
+	use("EdenEast/nightfox.nvim")
+	use("catppuccin/nvim")
+	use("bluz71/vim-nightfly-guicolors") -- current choice
 
 	-- maybe needs to use tmux.nvim instead
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -48,7 +51,7 @@ return packer.startup(function(use)
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	-- essential plugins
-	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+	use("tpope/vim-surround") -- add, delete, chakge surroundings (it's awesome)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc

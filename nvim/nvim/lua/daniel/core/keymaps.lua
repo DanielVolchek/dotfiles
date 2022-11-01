@@ -9,14 +9,10 @@ keymap.set("n", "J", "5j")
 keymap.set("n", "K", "5k")
 
 -- buffers
-keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
-keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
-keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "Delete Buffer" })
-keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })
-keymap.set("n", "<leader>bx", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>l", ":bnext<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>h", ":bprevious<CR>", { desc = "Previous Buffer" })
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
-keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
 keymap.set("n", "<leader>bD", ":bd!<CR>", { desc = "Delete Buffer" })
 
@@ -41,11 +37,11 @@ keymap.set("n", "<leader>bD", ":bd!<CR>", { desc = "Delete Buffer" })
 -- keymap.set("n", "<C-w><", "<C-w> 5 <", { desc = "Decrease Width by 5 units" })
 keymap.set("n", "<C-w>m", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" })
 
---tabs
-keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" }) -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" }) -- close current tab
-keymap.set("n", "<leader>tf", ":tabn<CR>", { desc = "Go To Next Tab" }) --  go to next tab
-keymap.set("n", "<leader>tb", ":tabp<CR>", { desc = "Go To Previous Tab" }) --  go to previous tab
+--tabs (only useful without barbar)
+-- keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" }) -- open new tab
+-- keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab" }) -- close current tab
+-- keymap.set("n", "<leader>tf", ":tabn<CR>", { desc = "Go To Next Tab" }) --  go to next tab
+-- keymap.set("n", "<leader>tb", ":tabp<CR>", { desc = "Go To Previous Tab" }) --  go to previous tab
 
 -- fix indentation
 keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" }) --  go to previous tab
