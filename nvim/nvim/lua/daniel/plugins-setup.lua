@@ -39,6 +39,10 @@ return packer.startup(function(use)
 	-- maybe needs to use tmux.nvim instead
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
+	--tab bar
+	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+
+	-- project search with telescope (fp)
 	use("ahmedkhalf/project.nvim")
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
@@ -58,6 +62,9 @@ return packer.startup(function(use)
 
 	-- marks
 	use("chentoast/marks.nvim")
+
+	-- dashboard
+	use("glepnir/dashboard-nvim")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")

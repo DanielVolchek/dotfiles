@@ -73,7 +73,7 @@ cmp.setup({
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
 	}),
-	-- configure lspkind for vs-code like icons
+	-- configure lspkind for vs-code like icon
 	formatting = {
 		format = lspkind.cmp_format({
 			maxwidth = 50,

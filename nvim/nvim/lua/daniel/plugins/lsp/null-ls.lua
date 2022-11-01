@@ -36,6 +36,7 @@ null_ls.setup({
 						end,
 						bufnr = bufnr,
 					})
+					print("Formatting...")
 				end,
 			})
 		end

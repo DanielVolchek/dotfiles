@@ -13,17 +13,33 @@ keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
 keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "Delete Buffer" })
 keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bx", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
+-- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
+
+keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
+keymap.set("n", "<leader>bx", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
+-- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })
 
 -- splits
-keymap.set("n", "<leader>s_", "<C-w>v", { desc = "Split Vertically" }) -- split vertical
-keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" }) -- split horizontal
--- resize splits
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split Equal Width" }) -- split equal width
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" }) -- toggle split window maximization
--- rotate split
-keymap.set("n", "<leader>sr", ":<C-u>vertical resize +2<CR>", { desc = "Rotate Split" }) -- rotate split
-
-keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" }) -- close split
+-- keymap.set("n", "<leader>s_", "<C-w>v", { desc = "Split Vertically" }) -- split vertical
+-- keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split Horizontally" }) -- split horizontal
+-- -- resize splits
+-- keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split Equal Width" }) -- split equal width
+-- keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" }) -- toggle split window maximization
+-- -- rotate split
+-- keymap.set("n", "<leader>sr", "<C-w>x", { desc = "Rotate Split" }) -- rotate split
+-- -- resize splits
+-- keymap.set("n", "<leader>sj", "<C-w><", { desc = "Decrease Split Width" }) -- decrease split width
+-- keymap.set("n", "<leader>sk", "<C-w>>", { desc = "Decrease Split Width" }) -- decrease split width
+--
+-- keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split" }) -- close split
+--
+-- splits
+-- keymap.set("n", "<C-w>+", "<C-w> 5 +", { desc = "Increase Height by 5 units" })
+-- keymap.set("n", "<C-w>-", "<C-w> 5 -", { desc = "Decrease Height by 5 units" })
+-- keymap.set("n", "<C-w>>", "<C-w> 5 >", { desc = "Increase Width by 5 units" })
+-- keymap.set("n", "<C-w><", "<C-w> 5 <", { desc = "Decrease Width by 5 units" })
+keymap.set("n", "<C-w>m", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" })
 
 --tabs
 keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" }) -- open new tab
