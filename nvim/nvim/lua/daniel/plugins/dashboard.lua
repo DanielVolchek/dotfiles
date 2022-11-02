@@ -39,7 +39,7 @@ db.custom_center = {
 		action = "NvimTreeToggle",
 	},
 	{
-		icon = "  ",
+		icon = "  ",
 		desc = "<- Find String ->            ",
 		action = "Telescope live_grep",
 	},
