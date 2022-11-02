@@ -4,6 +4,7 @@ require("daniel.plugins-setup")
 require("daniel.core.options") -- opts
 require("daniel.core.keymaps") -- keymaps
 require("daniel.core.colorscheme") -- colorscheme
+require("daniel.core.commands") -- self-defined commands
 --plugins
 require("daniel.plugins.comment")
 require("daniel.plugins.nvim-tree")

@@ -43,4 +43,10 @@ db.custom_center = {
 		desc = "<- Find String ->            ",
 		action = "Telescope live_grep",
 	},
+
+	{
+		icon = "  ",
+		desc = "<- Config ->                 ",
+		action = "EditConfig",
+	},
 }
