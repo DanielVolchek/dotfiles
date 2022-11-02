@@ -9,8 +9,8 @@ keymap.set("n", "J", "5j")
 keymap.set("n", "K", "5k")
 
 -- buffers
-keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
-keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous Buffer" })
+keymap.set("n", "<leader>bb", ":bnext<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>bn", ":bprevious<CR>", { desc = "Previous Buffer" })
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
 keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
@@ -114,7 +114,33 @@ function Toggle_term_cmd(term_details)
 	-- astronvim.user_terminals[term_key]:toggle()
 end
 -- toggleterm
-keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle Terminal Split" })
+function config.toggle_term_cmd(term_details)
+	-- if a command string is provided, create a basic table for Terminal:new() options
+	if type(term_details) == "string" then
+		term_details = { cmd = term_details, hidden = true }
+	end
+	-- use the command as the key for the table
+	local term_key = term_details.cmd
+	-- set the count in the term details
+	if vim.v.count > 0 and term_details.count == nil then
+		term_details.count = vim.v.count
+		term_key = term_key .. vim.v.count
+	end
+	-- if terminal doesn't exist yet, create it
+	if config.user_terminals[term_key] == nil then
+		config.user_terminals[term_key] = require("toggleterm.terminal").Terminal:new(term_details)
+	end
+	-- toggle the terminal
+	config.user_terminals[term_key]:toggle()
+end
+
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal Split" })
+keymap.set("n", "<leader>tn", function()
+	config.toggle_term_cmd("node")
+end, { desc = "Toggle Node Terminal" })
+keymap.set("n", "<leader>tg", function()
+	config.toggle_term_cmd("lazygit")
+end, { desc = "Toggle LazyGit" })
 
 function _G.set_terminal_keymaps()
 	local term_opts = { buffer = 0 }

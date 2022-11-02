@@ -1,3 +1,5 @@
+_G.config = {}
+config.user_terminals = {}
 -- setup
 require("daniel.plugins-setup")
 --core
