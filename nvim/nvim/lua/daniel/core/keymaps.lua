@@ -9,8 +9,8 @@ keymap.set("n", "J", "5j")
 keymap.set("n", "K", "5k")
 
 -- buffers
-keymap.set("n", "<leader>l", ":bnext<CR>", { desc = "Next Buffer" })
-keymap.set("n", "<leader>h", ":bprevious<CR>", { desc = "Previous Buffer" })
+keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous Buffer" })
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
 keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })

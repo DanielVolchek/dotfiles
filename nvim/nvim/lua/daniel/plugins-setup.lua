@@ -38,6 +38,7 @@ return packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("catppuccin/nvim")
 	use("bluz71/vim-nightfly-guicolors") -- current choice
+	use("marko-cerovac/material.nvim")
 
 	-- maybe needs to use tmux.nvim instead
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation

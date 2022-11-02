@@ -56,6 +56,8 @@ if not status then
 	return
 end
 
+vim.g.material_style = "oceanic"
+
 -- vim.g.nightflyUnderlineMatchParen = true
 
 -- local status, _ = pcall(vim.cmd, "colorscheme NeoSolarized")

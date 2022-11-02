@@ -103,4 +103,12 @@ nvimtree.setup({
 			},
 		},
 	},
+
+	renderer = {
+		icons = {
+			glyphs = {
+				git = {},
+			},
+		},
+	},
 })

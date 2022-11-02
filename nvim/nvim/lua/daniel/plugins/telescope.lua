@@ -29,7 +29,10 @@ telescope.setup({
 				preview_cutoff = 120,
 			},
 		},
-		buffers = { sort_lastused = true, ignore_current_buffer = true },
+		buffers = {
+			sort_lastused = true,
+			ignore_current_buffer = true,
+		},
 	},
 	defaults = {
 		prompt_prefix = " ",
