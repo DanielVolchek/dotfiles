@@ -1,3 +1,36 @@
+-- set colorscheme
+-- local CUSTOM_SCHEMES = {
+-- 	"colorscheme tokyonight-dark",
+-- 	"colorscheme dracula",
+-- 	"colorscheme nightfly",
+-- }
+
+local _status, tokyonight = pcall(require, "tokyonight")
+if not _status then
+	return
+end
+
+tokyonight.setup({
+	style = "moon",
+})
+
+local scheme = "colorscheme tokyonight"
+local status, _ = pcall(vim.cmd, scheme)
+if not status then
+	print("Colorscheme not found!")
+	return
+end
+
+vim.g.material_style = "oceanic"
+
+-- vim.g.nightflyUnderlineMatchParen = true
+
+-- local status, _ = pcall(vim.cmd, "colorscheme NeoSolarized")
+-- if not status then
+-- 	print("Colorscheme not found!")
+-- 	return
+-- end
+
 -- local dracula = require("dracula")
 -- dracula.setup({
 -- 	-- customize dracula color palette
@@ -41,27 +74,3 @@
 -- 		-- Nothing = {} -- clear highlight of Nothing
 -- 	},
 -- })
-
--- set colorscheme
--- local CUSTOM_SCHEMES = {
--- 	"colorscheme tokyonight-dark",
--- 	"colorscheme dracula",
--- 	"colorscheme nightfly",
--- }
-
-local scheme = "colorscheme nightfly"
-local status, _ = pcall(vim.cmd, scheme)
-if not status then
-	print("Colorscheme not found!")
-	return
-end
-
-vim.g.material_style = "oceanic"
-
--- vim.g.nightflyUnderlineMatchParen = true
-
--- local status, _ = pcall(vim.cmd, "colorscheme NeoSolarized")
--- if not status then
--- 	print("Colorscheme not found!")
--- 	return
--- end

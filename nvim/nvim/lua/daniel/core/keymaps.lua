@@ -36,6 +36,7 @@ keymap.set("n", "<leader>bC", ":bd!<CR>", { desc = "Delete Buffer" })
 -- keymap.set("n", "<C-w>>", "<C-w> 5 >", { desc = "Increase Width by 5 units" })
 -- keymap.set("n", "<C-w><", "<C-w> 5 <", { desc = "Decrease Width by 5 units" })
 keymap.set("n", "<C-w>m", ":MaximizerToggle<CR>", { desc = "Maximize Current Split" })
+keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
 
 --tabs (only useful without barbar)
 -- keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" }) -- open new tab
