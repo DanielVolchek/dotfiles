@@ -4,7 +4,7 @@ if not status then
 end
 
 tterm.setup({
-	size = 10,
+	size = 5,
 	open_mapping = [[<F7>]],
 	shading_factor = 2,
 	direction = "float",

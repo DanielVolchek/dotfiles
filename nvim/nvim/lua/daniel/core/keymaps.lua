@@ -9,12 +9,12 @@ keymap.set("n", "J", "5j")
 keymap.set("n", "K", "5k")
 
 -- buffers
-keymap.set("n", "<leader>bb", ":bnext<CR>", { desc = "Next Buffer" })
-keymap.set("n", "<leader>bn", ":bprevious<CR>", { desc = "Previous Buffer" })
+keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous Buffer" })
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
-keymap.set("n", "<leader>bd", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
-keymap.set("n", "<leader>bD", ":bd!<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bc", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bC", ":bd!<CR>", { desc = "Delete Buffer" })
 
 -- splits
 -- keymap.set("n", "<leader>s_", "<C-w>v", { desc = "Split Vertically" }) -- split vertical

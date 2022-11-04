@@ -6,7 +6,7 @@ end
 
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
-local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+-- local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -19,7 +19,9 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
-		diagnostics.eslint_d, -- js/ts linter
+		-- eslint_d was causing some issues but leaving it here to look back later
+		-- eslint-lsp from mason seems to work just fine
+		-- diagnostics.eslint_d, -- js/ts linter
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
