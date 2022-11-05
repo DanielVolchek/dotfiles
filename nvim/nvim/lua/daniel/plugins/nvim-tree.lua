@@ -75,7 +75,7 @@ nvimtree.setup({
 	},
 	diagnostics = {
 		enable = true,
-		show_on_dirs = true,
+		show_on_dirs = false,
 		debounce_delay = 100,
 	},
 	actions = {
