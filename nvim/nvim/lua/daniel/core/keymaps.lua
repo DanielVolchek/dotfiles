@@ -60,7 +60,7 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Fuzzy 
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = " list open buffers in current neovim instance" }) -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = " list available help tags" }) -- list available help tags
 keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = " list frecency projects" }) -- list frecency projects
-keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = " list frecency projects" }) -- list frecency projects
+keymap.set("n", "<leader>fm", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = " list frecency projects" }) -- list frecency projects
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Resume Last Open Selector" }) -- list frecency projects
 
 -- telescope git commands (not on youtube nvim video)

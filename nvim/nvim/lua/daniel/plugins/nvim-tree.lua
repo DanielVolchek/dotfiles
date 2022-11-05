@@ -73,6 +73,11 @@ nvimtree.setup({
 		enable = true,
 		update_root = true,
 	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		debounce_delay = 100,
+	},
 	actions = {
 		open_file = {
 			quit_on_open = true,

@@ -19,43 +19,43 @@ db.session_directory = home .. "/.autosavenvim/"
 
 db.custom_center = {
 	{
-		icon = "  ",
-		desc = "Last Session           ",
+		icon = "  ",
+		desc = "Last Session          ",
 		action = "SessionLoad",
 	},
 	{
-		icon = "  ",
-		desc = "Recently opened files  ",
-		action = "DashboardFindHistory",
+		icon = "  ",
+		desc = "Recently opened files ",
+		action = "Telescope oldfiles",
 	},
 	{
-		icon = "  ",
-		desc = "File Browser           ",
+		icon = "  ",
+		desc = "File Browser          ",
 		action = "NvimTreeToggle",
 	},
 	{
 		icon = "  ",
-		desc = "Telescope              ",
+		desc = "Telescope             ",
 		action = "Telescope ",
 	},
 	{
-		icon = "  ",
-		desc = "Find File              ",
+		icon = "  ",
+		desc = "Find File             ",
 		action = "Telescope find_files find_command=rg,--hidden,--files",
 	},
 	{
-		icon = "S  ",
-		desc = "Find String            ",
+		icon = "  ",
+		desc = "Find String           ",
 		action = "Telescope live_grep",
 	},
 	{
-		icon = "P  ",
-		desc = "Find Project           ",
+		icon = "  ",
+		desc = "Find Project          ",
 		action = "Telescope projects",
 	},
 	{
-		icon = "  ",
-		desc = "Config                 ",
+		icon = "  ",
+		desc = "Config                ",
 		action = "EditConfig",
 	},
 }

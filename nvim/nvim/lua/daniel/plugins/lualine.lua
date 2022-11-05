@@ -31,7 +31,6 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		-- theme = "dracula-nvim",
 		theme = lualine_nightfly,
 	},
 })
