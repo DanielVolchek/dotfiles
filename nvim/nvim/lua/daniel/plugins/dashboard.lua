@@ -59,3 +59,5 @@ db.custom_center = {
 		action = "EditConfig",
 	},
 }
+
+db.custom_footer = { "" }
