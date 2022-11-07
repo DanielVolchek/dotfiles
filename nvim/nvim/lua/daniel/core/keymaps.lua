@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Hide Search Highlights" })
+keymap.set("n", "<leader>/", ":nohl<CR>", { desc = "Hide Search Highlights" })
+
 keymap.set("n", "x", '"_x')
 keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "J", "5j")
