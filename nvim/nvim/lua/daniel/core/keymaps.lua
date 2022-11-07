@@ -53,6 +53,10 @@ keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
 keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = true, noremap = true, desc = "Toggle File Tree" })
 keymap.set("n", "<leader>nm", ":NvimTreeOpen<CR>", { desc = "Open File Tree" })
 keymap.set("n", "<leader>nM", ":NvimTreeClose<CR>", { desc = "Close File Tree" })
+--symbolstree shortcuts
+keymap.set("n", "<leader>st", ":SymbolsOutline<CR>", { desc = "Toggle Symbols Tree" })
+keymap.set("n", "<leader>sm", ":SymbolsOutlineOpen<CR>", { desc = "Open Symbols Tree" })
+keymap.set("n", "<leader>sM", ":SymbolsOutlineClose<CR>", { desc = "Close Symbols Tree" })
 
 -- telescope
 keymap.set("n", "<leader>ft", "<cmd>Telescope <cr>", { desc = "List All Available Telescope Commands" }) -- Full Telescope Command List

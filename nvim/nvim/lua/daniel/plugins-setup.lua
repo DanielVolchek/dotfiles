@@ -40,6 +40,9 @@ return packer.startup(function(use)
 	use("bluz71/vim-nightfly-guicolors") -- current choice
 	use("marko-cerovac/material.nvim")
 
+	-- symboltree
+	use("simrat39/symbols-outline.nvim")
+
 	-- maybe needs to use tmux.nvim instead
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
