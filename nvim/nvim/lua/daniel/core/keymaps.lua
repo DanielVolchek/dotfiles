@@ -15,8 +15,14 @@ keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
 keymap.set("n", "<leader>bb", ":bprevious<CR>", { desc = "Previous Buffer" })
 -- keymap.set("n", "<leader>bX", ":bd!<CR>", { desc = "Delete Buffer" })jkj
 
-keymap.set("n", "<leader>bc", "<cmd>BufferClose<CR>", { desc = "Delete Buffer" })
-keymap.set("n", "<leader>bC", ":bd!<CR>", { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bc", "<cmd>BufferClose<CR>", { desc = "Close Buffer" })
+keymap.set("n", "<leader>bC", ":bd!<CR>", { desc = "Close Buffer" })
+keymap.set("n", "<C-w>C", "<cmd>BufferClose<CR>", { desc = "Close Buffer" })
+
+--search word forward without moving
+keymap.set("n", "(", "*<C-o>")
+--search word backwards without moving
+keymap.set("n", ")", "*<C-o>")
 
 -- splits
 -- keymap.set("n", "<leader>s_", "<C-w>v", { desc = "Split Vertically" }) -- split vertical
@@ -68,6 +74,7 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = " list av
 keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = " list frecency projects" }) -- list frecency projects
 keymap.set("n", "<leader>fm", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = " list frecency projects" }) -- list frecency projects
 keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Resume Last Open Selector" }) -- list frecency projects
+keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open List of oldfiles" }) -- list oldfiles from vim.info
 
 -- telescope git commands (not on youtube nvim video)
 keymap.set(
@@ -152,7 +159,7 @@ end, { desc = "Toggle LazyGit" })
 function _G.set_terminal_keymaps()
 	local term_opts = { buffer = 0 }
 	keymap.set("t", "<esc>", [[<C-\><C-n>]], term_opts)
-	keymap.set("t", "jk", [[<C-\><C-n>]], term_opts)
+	keymap.set("t", "JK", [[<C-\><C-n>]], term_opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

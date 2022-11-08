@@ -347,6 +347,21 @@ tmux_conf_copy_to_os_clipboard=false
 
 # rebind s to sort by time
 bind s choose-tree -s -O time
+
+# rebind . from move-window to swap-window with prompt
+unbind .
+bind . swap-window
+
+# rebind c to close pane to stay consistent with neovim
+unbind c
+bind c kill-pane
+
+#unbind x
+unbind x
+
+#bind n to new window
+bind n new-window
+
 # increase history size
 #set -g history-limit 10000
 

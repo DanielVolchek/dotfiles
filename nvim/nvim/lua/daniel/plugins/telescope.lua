@@ -14,6 +14,13 @@ end
 telescope.setup({
 	-- configure custom mappings
 	pickers = {
+		builtin = {
+			-- previewer = false,
+			layout_config = {
+				width = 0.5,
+				height = 0.75,
+			},
+		},
 		planets = {
 			show_pluto = true,
 			show_moon = true,
