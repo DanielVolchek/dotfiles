@@ -11,10 +11,17 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
+local typescript_status, typescript = pcall(require, "typescript")
+if not typescript_status then
 	return
 end
+
+-- import neodev plugin safely
+local neodev_status, neodev = pcall(require, "neodev")
+if not neodev_status then
+	return
+end
+neodev.setup({})
 
 local keymap = vim.keymap -- for conciseness
 

@@ -127,6 +127,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
+	--
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
@@ -138,6 +139,9 @@ return packer.startup(function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
+
+	-- neovim plugin development tools
+	use("folke/neodev.nvim")
 
 	--colors
 	use("uga-rosa/ccc.nvim")

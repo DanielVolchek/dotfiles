@@ -38,7 +38,7 @@ telescope.setup({
 		},
 		buffers = {
 			sort_lastused = true,
-			ignore_current_buffer = true,
+			-- ignore_current_buffer = true,
 		},
 	},
 	defaults = {

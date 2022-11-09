@@ -28,9 +28,7 @@ null_ls.setup({
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
-		print("null-ls attached")
 		if current_client.supports_method("textDocument/formatting") then
-			print("null-ls formatting attached")
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = augroup,
@@ -43,7 +41,6 @@ null_ls.setup({
 						end,
 						bufnr = bufnr,
 					})
-					print("Formatting...")
 				end,
 			})
 		end
