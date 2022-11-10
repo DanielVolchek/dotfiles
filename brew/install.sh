@@ -30,6 +30,7 @@ brew install bat
 brew install spotify-tui
 brew install spotifyd
 brew install htop
+brew install fzf
 
 
 
