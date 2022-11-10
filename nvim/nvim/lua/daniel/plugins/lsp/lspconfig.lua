@@ -46,6 +46,7 @@ local sig_opts = {
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
+AttachedNum = 0
 local on_attach = function(client, bufnr)
 	-- attach signature
 	local sig_status, signature = pcall(require, "lsp_signature")
@@ -76,11 +77,7 @@ local on_attach = function(client, bufnr)
 	--register new mappings in lsp
 	local mappings = {
 		["<leader>"] = {
-			f = {
-				name = "Find",
-				f = "Find Defs/Refs",
-				d = "Open Definiton Popup",
-			},
+			["rn"] = "Smart Rename",
 			d = {
 				name = "Diagnostics",
 				d = "Show diagnostics",
@@ -89,6 +86,7 @@ local on_attach = function(client, bufnr)
 		},
 		g = {
 			name = "Go to",
+			f = "Find Defs/Refs",
 			d = "Open Definiton Popup",
 			D = "Open Definiton Buffer",
 			i = "Open Implementation Buffer",
@@ -107,6 +105,10 @@ local on_attach = function(client, bufnr)
 			},
 			["oi"] = "TS Organize Imports",
 		})
+	end
+	if client.name == "sumneko_lua" then
+		vim.notify(string.format("Attaching Lua client num %d", AttachedNum))
+		AttachedNum = AttachedNum + 1
 	end
 
 	if whichkey_status then

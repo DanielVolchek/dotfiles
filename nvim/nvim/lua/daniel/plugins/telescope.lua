@@ -15,6 +15,7 @@ telescope.setup({
 	-- configure custom mappings
 	pickers = {
 		builtin = {
+			results_title = "Builtins",
 			include_extensions = true,
 			file_ignore_patterns = {},
 			previewer = false,
@@ -28,6 +29,7 @@ telescope.setup({
 			show_moon = true,
 		},
 		find_files = {
+			results_title = "Files",
 			-- no_ignore = true,
 			hidden = true,
 			follow = true,
@@ -39,6 +41,7 @@ telescope.setup({
 			},
 		},
 		buffers = {
+			results_title = "Buffers",
 			sort_lastused = true,
 			-- ignore_current_buffer = true,
 			mappings = {

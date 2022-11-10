@@ -48,6 +48,7 @@ keymap.set("n", "<C-w>c", function()
 	CloseIfLast()
 end, { desc = "Close Buffer" })
 keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
+keymap.set("n", "<C-w>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Term Split" })
 
 -- fix indentation
 keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
