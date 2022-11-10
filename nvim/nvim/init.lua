@@ -12,7 +12,7 @@ require("daniel.core.commands") -- self-defined commands
 
 --plugins
 
--- call notify first so that it can be used in other configs
+-- call notify first so that it can be used in other configs if needed
 require("daniel.plugins.notify")
 require("daniel.plugins.noice")
 

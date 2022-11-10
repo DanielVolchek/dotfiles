@@ -153,11 +153,20 @@ end, { desc = "Toggle Node Terminal" })
 keymap.set("n", "<leader>tg", function()
 	config.toggle_term_cmd("lazygit")
 end, { desc = "Toggle LazyGit" })
+keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
+keymap.set(
+	"n",
+	"<leader>ts",
+	"<cmd>ToggleTerm size=10 direction=horizontal<cr>",
+	{ desc = "ToggleTerm horizontal split" }
+)
+keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "ToggleTerm vertical split" })
 
 function _G.set_terminal_keymaps()
 	local term_opts = { buffer = 0 }
 	keymap.set("t", "<esc>", [[<C-\><C-n>]], term_opts)
 	keymap.set("t", "JK", [[<C-\><C-n>]], term_opts)
+	keymap.set("t", "", [[<C-\><C-n><C-w>]], term_opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

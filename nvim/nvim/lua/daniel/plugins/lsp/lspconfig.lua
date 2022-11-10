@@ -1,24 +1,33 @@
 -- import lspconfig plugin safely
+local whichkey_status, which_key = pcall(require, "which-key")
+if not whichkey_status then
+	vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
+end
+
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
+	vim.notify("lspconfig plugin is not installed", vim.log.levels.ERROR)
 	return
 end
 
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
+	vim.notify("cmp-nvim-lsp plugin is not installed", vim.log.levels.ERROR)
 	return
 end
 
 -- import typescript plugin safely
 local typescript_status, typescript = pcall(require, "typescript")
 if not typescript_status then
+	vim.notify("typescript plugin is not installed", vim.log.levels.ERROR)
 	return
 end
 
 -- import neodev plugin safely
 local neodev_status, neodev = pcall(require, "neodev")
 if not neodev_status then
+	vim.notify("neodev plugin is not installed", vim.log.levels.ERROR)
 	return
 end
 neodev.setup({})
@@ -31,6 +40,7 @@ local sig_opts = {
 	wrap = true,
 	max_width = 50,
 	hint_enable = false,
+	noice = true,
 }
 
 local keymap = vim.keymap -- for conciseness
@@ -38,11 +48,10 @@ local keymap = vim.keymap -- for conciseness
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- attach signature
-	local status, signature = pcall(require, "lsp_signature")
-	if status then
+	local sig_status, signature = pcall(require, "lsp_signature")
+	if sig_status then
 		signature.on_attach(sig_opts, bufnr)
 	end
-
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -63,13 +72,45 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "<leader>k", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
+	--register new mappings in lsp
+	local mappings = {
+		["<leader>"] = {
+			f = {
+				name = "Find",
+				f = "Find Defs/Refs",
+				d = "Open Definiton Popup",
+			},
+			d = {
+				name = "Diagnostics",
+				d = "Show diagnostics",
+			},
+			k = "Show Documentation",
+		},
+		g = {
+			name = "Go to",
+			d = "Open Definiton Popup",
+			D = "Open Definiton Buffer",
+			i = "Open Implementation Buffer",
+		},
+	}
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
 		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+		table.insert(mappings["<leader>"], {
+			r = {
+				name = "TS Refactor",
+				f = "Rename File",
+				u = "Remove Unused",
+			},
+			["oi"] = "TS Organize Imports",
+		})
+	end
+
+	if whichkey_status then
+		which_key.register(mappings, { prefix = "" })
 	end
 end
 
