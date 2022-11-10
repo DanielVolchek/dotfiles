@@ -100,6 +100,11 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["astro"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	filetypes = { "html", "css", "typescriptreact", "javascriptreact", "sass", "scss" },

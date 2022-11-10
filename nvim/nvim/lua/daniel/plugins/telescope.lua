@@ -15,7 +15,8 @@ telescope.setup({
 	-- configure custom mappings
 	pickers = {
 		builtin = {
-			-- previewer = false,
+			file_ignore_patterns = {},
+			previewer = false,
 			layout_config = {
 				width = 0.5,
 				height = 0.75,
@@ -43,8 +44,8 @@ telescope.setup({
 	},
 	defaults = {
 		prompt_prefix = " ",
-		selection_caret = "❯ ",
 		file_ignore_patterns = { "node_modules", ".git" },
+		selection_caret = "❯ ",
 		initial_mode = "normal",
 		mappings = {
 			i = {
