@@ -163,6 +163,8 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
+	-- better escape
+	use("max397574/better-escape.nvim")
 	-- git integration
 	-- use("kdheepak/lazygit.nvim")
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side

@@ -16,13 +16,21 @@ keymap.set("n", "<leader>bb", "<cmd>bprevious<CR>", { desc = "Previous Buffer" }
 
 keymap.set("n", "<leader>bc", "<cmd>BufferClose<CR>", { desc = "Close Buffer" })
 keymap.set("n", "<leader>bC", "<cmd>bd!<CR>", { desc = "Close Buffer" })
-keymap.set("n", "<C-w>C", "<cmd>BufferClose<CR>", { desc = "Close Buffer" })
 
 local SearchWithoutJump = function(dir)
 	vim.cmd(string.format("normal! %s", dir))
 	local count = vim.fn.searchcount().total
 	if count > 1 then
 		vim.cmd("normal! ")
+	end
+end
+
+local CloseIfLast = function()
+	local count = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
+	if count == 1 then
+		vim.cmd("BufferClose")
+	else
+		vim.cmd("normal! c")
 	end
 end
 
@@ -36,6 +44,9 @@ keymap.set("n", ")", function()
 end)
 
 keymap.set("n", "<C-w>m", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Current Split" })
+keymap.set("n", "<C-w>c", function()
+	CloseIfLast()
+end, { desc = "Close Buffer" })
 keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
 
 -- fix indentation
