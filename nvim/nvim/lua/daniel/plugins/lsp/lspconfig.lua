@@ -23,10 +23,26 @@ if not neodev_status then
 end
 neodev.setup({})
 
+-- lsp signature opts
+local sig_opts = {
+	bind = true,
+	toggle_key = "<C-x>",
+	floating_window_above_cur_line = true,
+	wrap = true,
+	max_width = 50,
+	hint_enable = false,
+}
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
+	-- attach signature
+	local status, signature = pcall(require, "lsp_signature")
+	if status then
+		signature.on_attach(sig_opts, bufnr)
+	end
+
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 

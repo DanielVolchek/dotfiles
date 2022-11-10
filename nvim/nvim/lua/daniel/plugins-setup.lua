@@ -31,6 +31,23 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+	use("MunifTanjim/nui.nvim") -- required UI Lib for noice
+
+	-- notify api
+	use("rcarriga/nvim-notify")
+
+	-- route error messages to notify
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	})
 
 	--colorschemes
 	use("Mofiqul/dracula.nvim")
@@ -75,6 +92,7 @@ return packer.startup(function(use)
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
+
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
@@ -82,11 +100,6 @@ return packer.startup(function(use)
 	--which key for keybindings
 	use("folke/which-key.nvim")
 
-	--litee library and plugins
-	-- use("ldelossa/litee.nvim")
-	-- use("ldelossa/litee-calltree.nvim")
-	-- use("ldelossa/litee-symboltree.nvim")
-	-- use("ldelossa/litee-bookmarks.nvim")
 	-- copilot lua implementation to allow cmp suggestions
 	use({
 		"zbirenbaum/copilot.lua",
@@ -142,6 +155,7 @@ return packer.startup(function(use)
 
 	-- neovim plugin development tools
 	use("folke/neodev.nvim")
+	-- use("bfredl/nvim-luadev")
 
 	--colors
 	use("uga-rosa/ccc.nvim")

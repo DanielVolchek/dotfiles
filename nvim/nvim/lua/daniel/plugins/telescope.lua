@@ -15,6 +15,7 @@ telescope.setup({
 	-- configure custom mappings
 	pickers = {
 		builtin = {
+			include_extensions = true,
 			file_ignore_patterns = {},
 			previewer = false,
 			layout_config = {
@@ -40,6 +41,14 @@ telescope.setup({
 		buffers = {
 			sort_lastused = true,
 			-- ignore_current_buffer = true,
+			mappings = {
+				i = {
+					["<c-d>"] = actions.delete_buffer,
+				},
+				n = {
+					["dd"] = actions.delete_buffer,
+				},
+			},
 		},
 	},
 	defaults = {
@@ -54,12 +63,15 @@ telescope.setup({
 				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
 			},
 			n = {
-				["q"] = actions.close, -- close telescope]
-				["dd"] = actions.delete_buffer, -- delete buffer
+				["q"] = actions.close, -- close telescope
 			},
 		},
+	},
+	extensions = {
+		noice = {},
 	},
 })
 
 telescope.load_extension("fzf")
 telescope.load_extension("projects")
+-- telescope.load_extension("noice")
