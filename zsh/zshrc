@@ -11,5 +11,3 @@ files=(
 for file in $files; do
   [ -f $HOME/$file ] && source $HOME/$file || echo "Failed to source $file"
 done
-
-
