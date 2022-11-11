@@ -1,6 +1,7 @@
 # source everything
-[ -f ~/.beforeprompt.zsh ] && source ~/.beforeprompt.zsh
-[ -f ~/.instantprompt.zsh ] && source ~/.instantprompt.zsh
-[ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.other.zsh ] && source ~/.others.zsh
+
+[ -f ~/.beforeprompt.zsh ] && source ~/.beforeprompt.zsh || echo "Could not find .beforeprompt.zsh"
+[ -f ~/.instantprompt.zsh ] && source ~/.instantprompt.zsh || echo "Could not find .instantprompt.zsh"
+[ -f ~/.aliases.zsh ] && source ~/.aliases.zsh || echo "Could not find .aliases.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || echo "Could not find .fzf.zsh"
+[ -f ~/.others.zsh ] && source ~/.others.zsh || echo "Could not find .others.zsh"

@@ -46,7 +46,6 @@ local sig_opts = {
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
-AttachedNum = 0
 local on_attach = function(client, bufnr)
 	-- attach signature
 	local sig_status, signature = pcall(require, "lsp_signature")
@@ -105,10 +104,6 @@ local on_attach = function(client, bufnr)
 			},
 			["oi"] = "TS Organize Imports",
 		})
-	end
-	if client.name == "sumneko_lua" then
-		vim.notify(string.format("Attaching Lua client num %d", AttachedNum))
-		AttachedNum = AttachedNum + 1
 	end
 
 	if whichkey_status then
@@ -187,6 +182,12 @@ lspconfig["sumneko_lua"].setup({
 			},
 		},
 	},
+})
+
+lspconfig["bashls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "bash", "zsh", "sh" },
 })
 
 -- auto format eslint on save with lspconfig
