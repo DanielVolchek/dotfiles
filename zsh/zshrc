@@ -1,7 +1,15 @@
 # source everything
+files=(
+  ".beforeprompt.zsh"
+  ".instantprompt.zsh"
+  ".afterprompt.zsh"
+  ".aliases.zsh"
+  ".fzf.zsh"
+  ".others.zsh"
+)
 
-[ -f ~/.beforeprompt.zsh ] && source ~/.beforeprompt.zsh || echo "Could not find .beforeprompt.zsh"
-[ -f ~/.instantprompt.zsh ] && source ~/.instantprompt.zsh || echo "Could not find .instantprompt.zsh"
-[ -f ~/.aliases.zsh ] && source ~/.aliases.zsh || echo "Could not find .aliases.zsh"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || echo "Could not find .fzf.zsh"
-[ -f ~/.others.zsh ] && source ~/.others.zsh || echo "Could not find .others.zsh"
+for file in $files; do
+  [ -f $HOME/$file ] && source $HOME/$file || echo "Failed to source $file"
+done
+
+
