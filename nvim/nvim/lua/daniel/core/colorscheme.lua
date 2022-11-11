@@ -17,9 +17,52 @@ tokyonight.setup({
 local scheme = "colorscheme tokyonight"
 local status, _ = pcall(vim.cmd, scheme)
 if not status then
-	print("Colorscheme not found!")
 	return
 end
+
+local colors = {
+	bg = "#282A36",
+	fg = "#F8F8F2",
+	selection = "#44475A",
+	comment = "#6272A4",
+	red = "#FF5555",
+	orange = "#FFB86C",
+	yellow = "#F1FA8C",
+	green = "#50fa7b",
+	purple = "#BD93F9",
+	cyan = "#8BE9FD",
+	pink = "#FF79C6",
+	bright_red = "#FF6E6E",
+	bright_green = "#69FF94",
+	bright_yellow = "#FFFFA5",
+	light_green = "#3eff5c",
+	bright_magenta = "#FF92DF",
+	bright_cyan = "#00ffff",
+	bright_white = "#FFFFFF",
+	menu = "#21222C",
+	visual = "#3E4452",
+	gutter_fg = "#4B5263",
+	nontext = "#3B4048",
+}
+
+local status_, modicator = pcall(require, "modicator")
+if not status_ then
+	return
+end
+
+modicator.setup({
+	highlights = {
+		modes = {
+			["i"] = colors.bright_cyan,
+			["n"] = colors.light_green,
+			["v"] = colors.bright_magenta,
+			["V"] = colors.bright_magenta,
+			["R"] = colors.bright_red,
+			["t"] = colors.bright_magenta,
+			["c"] = colors.bright_yellow,
+		},
+	},
+})
 
 vim.g.material_style = "oceanic"
 
@@ -34,30 +77,6 @@ vim.g.material_style = "oceanic"
 -- local dracula = require("dracula")
 -- dracula.setup({
 -- 	-- customize dracula color palette
--- 	colors = {
--- 		bg = "#282A36",
--- 		fg = "#F8F8F2",
--- 		selection = "#44475A",
--- 		comment = "#6272A4",
--- 		red = "#FF5555",
--- 		orange = "#FFB86C",
--- 		yellow = "#F1FA8C",
--- 		green = "#50fa7b",
--- 		purple = "#BD93F9",
--- 		cyan = "#8BE9FD",
--- 		pink = "#FF79C6",
--- 		bright_red = "#FF6E6E",
--- 		bright_green = "#69FF94",
--- 		bright_yellow = "#FFFFA5",
--- 		bright_blue = "#D6ACFF",
--- 		bright_magenta = "#FF92DF",
--- 		bright_cyan = "#A4FFFF",
--- 		bright_white = "#FFFFFF",
--- 		menu = "#21222C",
--- 		visual = "#3E4452",
--- 		gutter_fg = "#4B5263",
--- 		nontext = "#3B4048",
--- 	},
 -- 	-- show the '~' characters after the end of buffers
 -- 	show_end_of_buffer = true, -- default false
 -- 	-- use transparent background

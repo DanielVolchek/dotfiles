@@ -43,12 +43,15 @@ keymap.set("n", ")", function()
 	SearchWithoutJump("#")
 end)
 
+-- c-w binds
 keymap.set("n", "<C-w>m", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Current Split" })
 keymap.set("n", "<C-w>c", function()
 	CloseIfLast()
 end, { desc = "Close Buffer" })
 keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
 keymap.set("n", "<C-w>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Term Split" })
+keymap.set("n", "<C-w><C-l>", "<cmd>BufferNext<cr>", { desc = "Go to next buffer" })
+keymap.set("n", "<C-w><C-h>", "<cmd>BufferPrevious<cr>", { desc = "Go to previous buffer" })
 
 -- fix indentation
 keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" })

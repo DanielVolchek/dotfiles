@@ -3,7 +3,7 @@
 -- 	return
 -- end
 
--- keep tree out
+-- prevents first tab from showing im nvim-tree
 local nvim_tree_events = require("nvim-tree.events")
 local bufferline_api = require("bufferline.api")
 
@@ -22,3 +22,18 @@ end)
 nvim_tree_events.subscribe("TreeClose", function()
 	bufferline_api.set_offset(0)
 end)
+
+--reorder buffers after adding/deleting new buffer
+vim.api.nvim_create_autocmd("BufAdd", {
+	pattern = "*",
+	callback = function()
+		vim.cmd("BufferOrderByBufferNumber")
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufDelete", {
+	pattern = "*",
+	callback = function()
+		vim.cmd("BufferOrderByBufferNumber")
+	end,
+})

@@ -187,7 +187,7 @@ lspconfig["sumneko_lua"].setup({
 lspconfig["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "bash", "zsh", "sh" },
+	filetypes = { "zshrc", "bashrc", "bash", "zsh", "sh" },
 })
 
 -- auto format eslint on save with lspconfig

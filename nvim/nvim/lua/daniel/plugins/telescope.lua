@@ -11,11 +11,17 @@ if not actions_setup then
 end
 
 -- configure telescope
+
+--on vsplit (<c-l>) resume last picker
+local split = function(prompt_bufnr)
+	require("telescope.actions").file_vsplit(prompt_bufnr)
+	require("telescope.builtin").resume()
+end
+
 telescope.setup({
 	-- configure custom mappings
 	pickers = {
 		builtin = {
-			results_title = "Builtins",
 			include_extensions = true,
 			file_ignore_patterns = {},
 			previewer = false,
@@ -29,7 +35,6 @@ telescope.setup({
 			show_moon = true,
 		},
 		find_files = {
-			results_title = "Files",
 			-- no_ignore = true,
 			hidden = true,
 			follow = true,
@@ -41,7 +46,6 @@ telescope.setup({
 			},
 		},
 		buffers = {
-			results_title = "Buffers",
 			sort_lastused = true,
 			-- ignore_current_buffer = true,
 			mappings = {
@@ -64,17 +68,17 @@ telescope.setup({
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result
 				["<C-j>"] = actions.move_selection_next, -- move to next result
 				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
+				["<c-l>"] = split,
 			},
 			n = {
+				["<c-l>"] = split,
 				["q"] = actions.close, -- close telescope
+				["<C-k>"] = actions.move_selection_previous, -- move to prev result
+				["<C-j>"] = actions.move_selection_next, -- move to next result
 			},
 		},
-	},
-	extensions = {
-		noice = {},
 	},
 })
 
 telescope.load_extension("fzf")
 telescope.load_extension("projects")
--- telescope.load_extension("noice")
