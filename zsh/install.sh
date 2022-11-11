@@ -1,10 +1,43 @@
 #!/bin/bash
+#start interactive so script can be sourced at the end
+
+echo "Starting ZSH install script"
+echo "WARN: This script will overwrite zsh files... Continue? (y/n)"
+read -r response
+if [[ ! "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+  echo "Exiting..."
+  exit 1
+fi
+
+echo "Continuing..."
 
 # get directory of this script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # link all files in this directory to home directory
-ln -s $DIR/zshrc ~/.zshrc
-ln -s $DIR/oh-my-zsh ~/.oh-my-zsh
-ln -s $DIR/p10k.zsh ~/.p10k.zsh
-ln -s $DIR/powerlevel10k ~/powerlevel10k
+
+# pretty sure there is a better way to do this
+
+echo "linking .zsh files"
+
+HOME=$DIR/test
+echo "Home is $HOME"
+exit 0
+
+BASE=$(find $DIR -maxdepth 1 -type f -name '*.zsh' -exec basename {} ';')
+for file in $BASE; do
+  hidden=$(echo $file | sed 's/^/./')
+  echo "linking $file to $HOME/$hidden"
+  # echo $DIR/$file
+  ln -sf $DIR/$file $HOME/$file
+done
+
+echo "linking zshrc"
+ln -sf $DIR/zshrc $HOME/.zshrc
+echo "linking essential dirs"
+echo "linking "
+ln -sf $DIR/powerlevel10k $HOME/powerlevel10k
+ln -sf $DIR/oh-my-zsh $HOME/.oh-my-zsh
+
+echo "Restart terminal or source $HOME/.zshrc to see changes"
