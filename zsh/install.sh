@@ -21,10 +21,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "linking .zsh files"
 
-HOME=$DIR/test
-echo "Home is $HOME"
-exit 0
-
 BASE=$(find $DIR -maxdepth 1 -type f -name '*.zsh' -exec basename {} ';')
 for file in $BASE; do
   hidden=$(echo $file | sed 's/^/./')
@@ -36,8 +32,9 @@ done
 echo "linking zshrc"
 ln -sf $DIR/zshrc $HOME/.zshrc
 echo "linking essential dirs"
-echo "linking "
+echo "linking pl10k"
 ln -sf $DIR/powerlevel10k $HOME/powerlevel10k
+echo "linking ohmyzsh"
 ln -sf $DIR/oh-my-zsh $HOME/.oh-my-zsh
 
 echo "Restart terminal or source $HOME/.zshrc to see changes"
