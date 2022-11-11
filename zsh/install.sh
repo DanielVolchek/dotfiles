@@ -26,7 +26,7 @@ for file in $BASE; do
   hidden=$(echo $file | sed 's/^/./')
   echo "linking $file to $HOME/$hidden"
   # echo $DIR/$file
-  ln -sf $DIR/$file $HOME/$file
+  ln -sf $DIR/$file $HOME/$hidden
 done
 
 echo "linking zshrc"

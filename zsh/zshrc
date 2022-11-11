@@ -1,5 +1,5 @@
 # source everything
-[ -f ~/.beforeprompt.zsh] && source ~/.beforeprompt.zsh
+[ -f ~/.beforeprompt.zsh ] && source ~/.beforeprompt.zsh
 [ -f ~/.instantprompt.zsh ] && source ~/.instantprompt.zsh
 [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
