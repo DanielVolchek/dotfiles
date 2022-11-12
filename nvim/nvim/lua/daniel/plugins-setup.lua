@@ -75,9 +75,7 @@ return packer.startup(function(use)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
-	--use("numToStr/Comment.nvim")
-	--test pr
-	use("DanielVolchek/Comment.nvim")
+	use("numToStr/Comment.nvim")
 	--ts comment context
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
