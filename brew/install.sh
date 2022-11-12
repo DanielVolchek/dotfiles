@@ -14,31 +14,37 @@ else
   echo "Homebrew is already installed...";
 fi
 
+# brew taps
+brew tap homebrew/cask-fonts
+
 # install important packages
-brew install git
-brew install gh
-brew install nvm
-brew install yarn
-brew install vim
-brew install neovim
-brew install ncurses
-brew install tmux
-brew install jq
-brew install lazygit
-brew install glow
-brew install bat
-brew install spotify-tui
-brew install spotifyd
-brew install htop
-brew install fzf
-
-
-
+brew install git # the all important git
+brew install gh # github authenticator
+brew install nvm # node version manager
+brew install yarn # alternate to npm
+brew install vim # always good to have
+brew install neovim # <3
+brew install ncurses # for neovim
+brew install tmux # terminal multiplexer
+brew install jq # json parser
+brew install lazygit # git tui
+brew install glow # markdown viewer
+brew install bat # better cat
+brew install spotify-tui # spotify tui
+brew install spotifyd # spotify daemon
+brew install htop # show processes
+brew install fzf # fuzzy finder
+brew install fontforge # custom nerd font patcher
 
 # install essential casks
-brew install --cask iterm2
-brew install --cask google-chrome
-brew install --cask insomnia
-brew install --cask alt-tab
-brew installl --cask font-hack-nerd-font
-brew install --cask visual-studio-code
+brew install --cask iterm2 # best term emulator
+brew install --cask google-chrome # might need to switch to firefox after manifest v3
+brew install --cask insomnia # 
+brew install --cask alt-tab # better icons in cmd-tab switcher
+brew install --cask font-caskaydia-cove-nerd-font # nice font
+brew install --cask font-hack-nerd-font # nice font
+brew install --cask visual-studio-code # good to have just in case but I never use it
+
+#cascadia code
+#oxygen mono
+#space mono
