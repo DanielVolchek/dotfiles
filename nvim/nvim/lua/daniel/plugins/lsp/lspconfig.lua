@@ -48,10 +48,10 @@ local keymap = vim.keymap -- for conciseness
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- attach signature
-	local sig_status, signature = pcall(require, "lsp_signature")
-	if sig_status then
-		signature.on_attach(sig_opts, bufnr)
-	end
+	-- local sig_status, signature = pcall(require, "lsp_signature")
+	-- if sig_status then
+	-- 	signature.on_attach(sig_opts, bufnr)
+	-- end
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 

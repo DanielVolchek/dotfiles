@@ -6,7 +6,7 @@ end
 noice.setup({
 	lsp = {
 		signature = {
-			enabled = false,
+			enabled = true,
 		},
 	},
 })
