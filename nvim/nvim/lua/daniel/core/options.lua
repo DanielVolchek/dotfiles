@@ -36,3 +36,4 @@ opt.splitbelow = true
 
 -- kebab case as one word
 opt.iskeyword:append("-")
+opt.cmdheight = 1

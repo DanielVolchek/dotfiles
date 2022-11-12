@@ -30,6 +30,16 @@ lualine_nightfly.command = {
 
 -- configure lualine with modified theme
 lualine.setup({
+	sections = {
+		lualine_x = {
+			{
+				require("noice").api.statusline.mode.get,
+				cond = require("noice").api.statusline.mode.has,
+				color = { fg = "#fff" },
+			},
+		},
+	},
+
 	options = {
 		theme = lualine_nightfly,
 	},
