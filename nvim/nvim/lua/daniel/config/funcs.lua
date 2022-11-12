@@ -11,7 +11,7 @@ config.sourcedir = function(dir)
 	end
 	local files = vim.fn.readdir(dir)
 	for _, file in ipairs(files) do
-		--	why lua no have continue D:
+		--			why lua no have continue D:
 		if file ~= "README.md" then
 			config.log("Sourcing " .. file)
 			local status, ok = pcall(require, config.plugindir .. file)
@@ -20,5 +20,13 @@ config.sourcedir = function(dir)
 				config.log("Error: " .. ok)
 			end
 		end
+	end
+end
+
+config.SearchWithoutJump = function(dir)
+	vim.cmd(string.format("normal! %s", dir))
+	local count = vim.fn.searchcount().total
+	if count > 1 then
+		vim.cmd("normal! ")
 	end
 end
