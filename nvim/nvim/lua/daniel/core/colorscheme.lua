@@ -5,13 +5,37 @@
 -- 	"colorscheme nightfly",
 -- }
 
-local _status, tokyonight = pcall(require, "tokyonight")
-if not _status then
+local status, tokyonight = pcall(require, "tokyonight")
+if not status then
 	return
 end
 
+local iconload, icons = pcall(require, "nvim-web-devicons")
+if not iconload then
+	return
+end
+
+icons.set_icon({
+	astro = {
+		icon = "異",
+		color = "#82aaff",
+		name = "Astro",
+		-- icon_hl = "#82aaff",
+	},
+})
+
 tokyonight.setup({
 	style = "moon",
+	on_highlights = function(hl, colors)
+		hl.NvimTreeFolderIcon = {
+			bg = "NONE",
+			fg = colors.yellow,
+		}
+		hl.NvimTreeRootFolder = {
+			bold = true,
+			fg = colors.white,
+		}
+	end,
 })
 
 local scheme = "colorscheme tokyonight"
@@ -64,32 +88,7 @@ modicator.setup({
 	},
 })
 
-vim.g.material_style = "oceanic"
-
--- vim.g.nightflyUnderlineMatchParen = true
-
--- local status, _ = pcall(vim.cmd, "colorscheme NeoSolarized")
--- if not status then
--- 	print("Colorscheme not found!")
--- 	return
--- end
-
--- local dracula = require("dracula")
--- dracula.setup({
--- 	-- customize dracula color palette
--- 	-- show the '~' characters after the end of buffers
--- 	show_end_of_buffer = true, -- default false
--- 	-- use transparent background
--- 	transparent_bg = true, -- default false
--- 	-- set custom lualine background color
--- 	lualine_bg_color = "#44475a", -- default nil
--- 	-- set italic comment
--- 	italic_comment = true, -- default false
--- 	-- overrides the default highlights see `:h synIDattr`
--- 	overrides = {
--- 		-- Examples
--- 		-- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
--- 		-- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
--- 		-- Nothing = {} -- clear highlight of Nothing
--- 	},
--- })
+if config.transparent then
+	vim.api.nvim_set_hl(0, "Normal", { ctermbg = "NONE", bg = "NONE" })
+	vim.api.nvim_set_hl(0, "SignColumn", { ctermbg = "NONE", bg = "NONE" })
+end
