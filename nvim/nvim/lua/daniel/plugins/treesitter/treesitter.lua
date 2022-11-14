@@ -36,6 +36,7 @@ treesitter.setup({
 		"dockerfile",
 		"gitignore",
 		"prisma",
+		"rust",
 	},
 	-- auto install above language parsers
 	auto_install = true,

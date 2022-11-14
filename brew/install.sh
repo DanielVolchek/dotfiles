@@ -35,6 +35,7 @@ brew install spotifyd # spotify daemon
 brew install htop # show processes
 brew install fzf # fuzzy finder
 brew install fontforge # custom nerd font patcher
+brew install rust # rust lang
 
 # install essential casks
 brew install --cask iterm2 # best term emulator

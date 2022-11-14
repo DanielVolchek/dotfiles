@@ -348,6 +348,11 @@ _G.packer_plugins = {
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/vim-surround",

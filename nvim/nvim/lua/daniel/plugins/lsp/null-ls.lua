@@ -22,6 +22,7 @@ null_ls.setup({
 		formatting.clang_format, -- c/c++ linter
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
+		formatting.rustfmt, -- rust formatter
 		-- eslint_d was causing some issues but leaving it here to look back later
 		-- eslint-lsp from mason seems to work just fine
 		-- diagnostics.eslint_d, -- js/ts linter

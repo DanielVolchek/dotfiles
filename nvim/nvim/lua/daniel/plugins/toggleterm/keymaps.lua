@@ -1,5 +1,6 @@
 -- toggleterm
 function config.toggle_term_cmd(term_details)
+	vim.notify("termdetails is " .. term_details)
 	-- if a command string is provided, create a basic table for Terminal:new() options
 	if type(term_details) == "string" then
 		term_details = { cmd = term_details, hidden = true }
@@ -26,6 +27,9 @@ end, { desc = "Toggle Node Terminal" })
 vim.keymap.set("n", "<leader>tg", function()
 	config.toggle_term_cmd("lazygit")
 end, { desc = "Toggle LazyGit" })
+vim.keymap.set("n", "<leader>tm", function()
+	config.toggle_term_cmd("glow " .. vim.api.nvim_buf_get_name(0) .. " -p")
+end, { desc = "ToggleTerm markdown" })
 vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
 vim.keymap.set(
 	"n",

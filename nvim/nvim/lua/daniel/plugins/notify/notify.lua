@@ -4,5 +4,5 @@ if not status then
 end
 
 notify.setup({
-	timeout = 3500,
+	timeout = 750,
 })
