@@ -35,11 +35,20 @@ end
 -- 	},
 -- }
 
--- db.custom_header = customheaders[1]
-db.preview_command = "cat | lolcat -F 0.5"
-db.preview_file_path = home .. "/.config/nvim/lua/daniel/plugins/dashboard/header.txt"
-db.preview_file_height = 15
-db.preview_file_width = 46
+if vim.fn.executable("cbonsai") == 1 then
+	-- check if cbonsai exists
+	db.preview_command = "cbonsai -l -i -M 3 -t .02  -L 28 -p | cat"
+	db.preview_file_path = ""
+else
+	-- notify user and set preview to cat backup file
+	vim.notify("cbonsai not installed, displaying static backup file - check dashboard/dashboard.lua for more info")
+	-- todo I know there is a way to get this dynamically
+	db.preview_file_path = vim.fn.stdpath("config") .. "/lua/daniel/plugins/dashboard/header.txt"
+	db.preview_command = "cat"
+end
+
+db.preview_file_height = 25
+db.preview_file_width = 75
 
 -- auto save settings
 db.session_auto_save_on_exit = true
@@ -76,11 +85,11 @@ db.custom_center = {
 		desc = "Find String           ",
 		action = "Telescope live_grep",
 	},
-	{
-		icon = "  ",
-		desc = "Find Project          ",
-		action = "Telescope projects",
-	},
+	-- {
+	-- 	icon = "  ",
+	-- 	desc = "Find Project          ",
+	-- 	action = "Telescope projects",
+	-- },
 	{
 		icon = "  ",
 		desc = "Config                ",
