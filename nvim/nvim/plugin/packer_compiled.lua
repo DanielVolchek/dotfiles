@@ -313,6 +313,11 @@ _G.packer_plugins = {
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/tabout.nvim",
     url = "https://github.com/abecodes/tabout.nvim"
   },
+  ["tailiscope-nvim"] = {
+    loaded = true,
+    path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/tailiscope-nvim",
+    url = "https://github.com/danielvolchek/tailiscope-nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",

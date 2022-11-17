@@ -28,6 +28,7 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"sumneko_lua",
 		"rust_analyzer",
+		"pylsp",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed

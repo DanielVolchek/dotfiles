@@ -18,7 +18,8 @@ vim.keymap.set("n", ")", function()
 end)
 
 -- fix indentation
-vim.keymap.set("n", "<leader>==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
+vim.keymap.set("n", "==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
+vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
 
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua

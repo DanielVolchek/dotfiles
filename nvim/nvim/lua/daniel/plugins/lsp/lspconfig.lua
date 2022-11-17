@@ -173,6 +173,11 @@ lspconfig["emmet_ls"].setup({
 	filetypes = { "html", "css", "typescriptreact", "javascriptreact", "sass", "scss" },
 })
 
+lspconfig["pylsp"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure lua server (with special settings)
 lspconfig["sumneko_lua"].setup({
 	capabilities = capabilities,
