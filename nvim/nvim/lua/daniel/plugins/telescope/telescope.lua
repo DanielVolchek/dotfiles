@@ -78,7 +78,13 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		tailiscope = {
+			path = "http://localhost:3000/docs/",
+		},
+	},
 })
 
 telescope.load_extension("fzf")
 telescope.load_extension("projects")
+telescope.load_extension("tailiscope")

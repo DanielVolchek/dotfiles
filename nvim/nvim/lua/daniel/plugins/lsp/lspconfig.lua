@@ -106,6 +106,11 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
+	if client.name == "tailwindcss" then
+		require("telescope").load_extension("tailiscope")
+		keymap.set("n", "<leader>fw", ":Telescope tailiscope<CR>")
+	end
+
 	if whichkey_status then
 		which_key.register(mappings, { prefix = "" })
 	end
