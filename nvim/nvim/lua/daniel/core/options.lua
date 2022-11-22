@@ -37,3 +37,6 @@ opt.splitbelow = true
 -- kebab case as one word
 opt.iskeyword:append("-")
 opt.cmdheight = 1
+
+-- persist undo after closing
+opt.undofile = true

@@ -66,9 +66,10 @@ return packer.startup(function(use)
 	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
 	-- project search with telescope (fp)
-	use("ahmedkhalf/project.nvim")
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
+
+	use("ThePrimeagen/harpoon") -- bookmarks
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -100,7 +101,9 @@ return packer.startup(function(use)
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-	use("danielvolchek/tailiscope-nvim")
+
+	-- todo
+	use("/Users/danielvolchek/code/tailiscope")
 
 	--which key for keybindings
 	use("folke/which-key.nvim")
@@ -145,7 +148,8 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
-	--
+	use("folke/trouble.nvim") -- lsp diagnostics"
+
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls

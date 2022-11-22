@@ -24,11 +24,14 @@ nvim_tree_events.subscribe("TreeClose", function()
 end)
 
 --reorder buffers after adding/deleting new buffer
+local group = vim.api.nvim_create_augroup("barbar_sort", { clear = true })
+
 vim.api.nvim_create_autocmd("BufAdd", {
 	pattern = "*",
 	callback = function()
 		vim.cmd("BufferOrderByBufferNumber")
 	end,
+	group = group,
 })
 
 vim.api.nvim_create_autocmd("BufDelete", {
@@ -36,4 +39,5 @@ vim.api.nvim_create_autocmd("BufDelete", {
 	callback = function()
 		vim.cmd("BufferOrderByBufferNumber")
 	end,
+	group = group,
 })

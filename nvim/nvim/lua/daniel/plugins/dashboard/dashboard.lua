@@ -37,7 +37,30 @@ end
 
 if vim.fn.executable("cbonsai") == 1 then
 	-- check if cbonsai exists
-	db.preview_command = "cbonsai -l -i -M 3 -t .02  -L 28 -p | cat"
+	local command = "cbonsai -p"
+
+	local time = config.bonsai.time or 0.02
+	local waittime = config.bonsai.wait or 10
+	local multiplier = config.bonsai.multiplier or 3
+	local life = config.bonsai.life or 28
+
+	command = command
+		.. " --time="
+		.. time
+		.. " --wait="
+		.. waittime
+		.. " --multiplier="
+		.. multiplier
+		.. " --life="
+		.. life
+
+	if config.bonsai.infinite then
+		command = command .. " --infinite"
+	end
+	if config.bonsai.live then
+		command = command .. " --live"
+	end
+	db.preview_command = command .. " | cat"
 	db.preview_file_path = ""
 else
 	-- notify user and set preview to cat backup file
@@ -47,7 +70,7 @@ else
 	db.preview_command = "cat"
 end
 
-db.preview_file_height = 25
+db.preview_file_height = 20
 db.preview_file_width = 75
 
 -- auto save settings

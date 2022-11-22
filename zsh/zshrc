@@ -1,4 +1,5 @@
 # source everything
+
 files=(
   ".beforeprompt.zsh"
   ".instantprompt.zsh"
