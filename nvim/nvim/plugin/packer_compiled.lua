@@ -166,6 +166,11 @@ _G.packer_plugins = {
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["lsp-status.nvim"] = {
+    loaded = true,
+    path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
+    url = "https://github.com/nvim-lua/lsp-status.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
