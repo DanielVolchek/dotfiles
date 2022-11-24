@@ -3,4 +3,12 @@ if not status then
 	return
 end
 
-marks.setup({})
+marks.setup({
+	mappings = {
+		preview = "m;",
+		set_next = "m<leader>",
+		next = "m.",
+		prev = "m,",
+		delete_line = "dmm",
+	},
+})

@@ -4,6 +4,12 @@ if not whichkey_status then
 	vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
 end
 
+local lsptatus_status, lsp_status = pcall(require, "lsp-status")
+if not lsptatus_status then
+	vim.notify("lsp-status plugin is not installed", vim.log.levels.ERROR)
+end
+lsp_status.register_progress()
+
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
 	vim.notify("lspconfig plugin is not installed", vim.log.levels.ERROR)
@@ -54,11 +60,13 @@ local on_attach = function(client, bufnr)
 	-- end
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
+	lsp_status.on_attach(client)
 
 	-- set keybinds
 	keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
 	keymap.set("n", "<leader>gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
 	keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
+	keymap.set("n", "<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
 	keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 	keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
 	keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
@@ -127,12 +135,6 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 -- configure typescript server with plugin
 typescript.setup({
 	server = {
@@ -141,8 +143,13 @@ typescript.setup({
 	},
 })
 
--- configure css server
-lspconfig["cssls"].setup({
+lspconfig["eslint"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure html server
+lspconfig["html"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -153,26 +160,43 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["clangd"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["rust_analyzer"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-lspconfig["astro"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
+-- configure emmet snippets
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	filetypes = { "html", "css", "typescriptreact", "javascriptreact", "sass", "scss" },
 })
 
+-- configure astro server
+lspconfig["astro"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure css server
+lspconfig["cssls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure go server
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure C++ server
+lspconfig["clangd"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure rust server
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure python server
 lspconfig["pylsp"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -199,6 +223,7 @@ lspconfig["sumneko_lua"].setup({
 	},
 })
 
+-- configure bash server
 lspconfig["bashls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

@@ -103,6 +103,7 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- todo
+	-- use("DanielVolchek/tailiscope.nvim")
 	use("/Users/danielvolchek/code/tailiscope")
 
 	--which key for keybindings
@@ -150,6 +151,7 @@ return packer.startup(function(use)
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
 	use("folke/trouble.nvim") -- lsp diagnostics"
 
+	use("nvim-lua/lsp-status.nvim")
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls

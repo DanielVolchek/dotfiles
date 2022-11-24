@@ -6,6 +6,12 @@ end
 noice.setup({
 	-- show function signature while typing
 	-- might replace with lspsignature
+	messages = {
+		enabled = false,
+	},
+	cmdline = {
+		enabled = false,
+	},
 	lsp = {
 		signature = {
 			enabled = true,

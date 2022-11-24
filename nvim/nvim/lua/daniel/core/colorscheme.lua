@@ -92,3 +92,6 @@ if config.transparent then
 	vim.api.nvim_set_hl(0, "Normal", { ctermbg = "NONE", bg = "NONE" })
 	vim.api.nvim_set_hl(0, "SignColumn", { ctermbg = "NONE", bg = "NONE" })
 end
+
+-- cmd line color
+vim.api.nvim_set_hl(0, "MsgArea", { bg = "#000000" })

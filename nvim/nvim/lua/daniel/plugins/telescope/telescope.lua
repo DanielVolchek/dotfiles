@@ -79,10 +79,19 @@ telescope.setup({
 		},
 	},
 	extensions = {
-		tailiscope = {},
+		tailiscope = {
+			register = '"',
+			doc_icon = "y ",
+			initial_mode = "insert",
+		},
 	},
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("projects")
 telescope.load_extension("tailiscope")
+
+vim.keymap.set("n", "<leader>fi", function()
+	require("telescope").extensions.tailiscope.all(require("telescope.themes").get_dropdown({
+		initial_mode = "normal",
+	}))
+end)

@@ -48,3 +48,5 @@ vim.keymap.set(
 ) -- list current changes per file with diff preview ["gs" for git status]
 vim.keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
 vim.keymap.set("n", "<C-w>f", "<cmd>Telescope find_files<cr>", { desc = "Find files in CWD" })
+
+vim.keymap.set("n", "fw", "<cmd>Telescope tailiscope categories<cr>")

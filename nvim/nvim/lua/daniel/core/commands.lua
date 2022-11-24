@@ -9,3 +9,19 @@ P = function(v)
 	print(vim.inspect(v))
 	return v
 end
+
+local group = vim.api.nvim_create_augroup("cmdlinesize", { clear = true })
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	callback = function()
+		vim.o.cmdheight = 1
+	end,
+	group = group,
+})
+
+vim.api.nvim_create_autocmd("CmdLineLeave", {
+	callback = function()
+		vim.o.cmdheight = 0
+	end,
+	group = group,
+})

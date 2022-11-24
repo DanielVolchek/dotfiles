@@ -40,3 +40,5 @@ opt.cmdheight = 1
 
 -- persist undo after closing
 opt.undofile = true
+
+opt.cmdheight = 0
