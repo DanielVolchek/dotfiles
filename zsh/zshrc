@@ -5,6 +5,7 @@ files=(
   ".instantprompt.zsh"
   ".afterprompt.zsh"
   ".aliases.zsh"
+  ".config.zsh"
   ".fzf.zsh"
   ".others.zsh"
 )

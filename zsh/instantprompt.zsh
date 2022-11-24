@@ -77,7 +77,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  # zsh-autosuggestions
+  )
+
+# zsh-autosuggestions config
+# ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+# ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history)
+#
+# bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
