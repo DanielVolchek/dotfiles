@@ -115,7 +115,11 @@ return packer.startup(function(use)
 		after = "lualine.nvim", -- whichever statusline plugin you use here
 		config = function()
 			vim.defer_fn(function()
-				require("copilot").setup()
+				require("copilot").setup({
+					formatters = {
+						insert_text = require("copilot_cmp.format").remove_existing,
+					},
+				})
 			end, 100)
 		end,
 	})
