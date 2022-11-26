@@ -30,7 +30,7 @@ local function edit_or_open()
 	end
 end
 
-nvimtree.setup({
+local opts = {
 	open_on_setup = true,
 	open_on_tab = true,
 	hijack_cursor = true,
@@ -56,6 +56,17 @@ nvimtree.setup({
 	},
 	view = {
 		-- adaptive_size = true,
+		float = {
+			enable = true,
+			open_win_config = {
+				relative = "editor",
+				border = "rounded",
+				width = 90,
+				col = vim.o.columns / 2 - 45,
+				height = 30,
+				row = vim.o.lines / 2 - 15,
+			},
+		},
 		mappings = {
 			custom_only = false,
 			list = {
@@ -78,4 +89,8 @@ nvimtree.setup({
 			},
 		},
 	},
-})
+}
+
+nvimtree.setup(opts)
+
+return opts
