@@ -12,3 +12,4 @@ config.sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
 
 --load maps
 -- config.loadmaps(config.maps)
+--

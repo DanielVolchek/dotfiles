@@ -125,7 +125,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["copilot-cmp"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16copilot_cmp\frequire\0" },
+    config = { "\27LJ\2\n™\1\0\0\a\0\t\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0005\3\5\0006\4\0\0'\6\3\0B\4\2\0029\4\4\4=\4\6\3=\3\b\2B\0\2\1K\0\1\0\15formatters\1\0\0\16insert_text\1\0\0\20remove_existing\23copilot_cmp.format\nsetup\16copilot_cmp\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -134,7 +134,7 @@ _G.packer_plugins = {
   },
   ["copilot.lua"] = {
     after = { "copilot-cmp" },
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0" },
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -321,7 +321,7 @@ _G.packer_plugins = {
   tailiscope = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/tailiscope",
-    url = "/Users/danielvolchek/code/tailiscope"
+    url = "/Users/danielvolchek/code/plugins/tailiscope"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -387,12 +387,12 @@ vim.cmd [[ packadd lualine.nvim ]]
 vim.cmd [[ packadd copilot.lua ]]
 
 -- Config for: copilot.lua
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0", "config", "copilot.lua")
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0", "config", "copilot.lua")
 
 vim.cmd [[ packadd copilot-cmp ]]
 
 -- Config for: copilot-cmp
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16copilot_cmp\frequire\0", "config", "copilot-cmp")
+try_loadstring("\27LJ\2\n™\1\0\0\a\0\t\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\a\0005\3\5\0006\4\0\0'\6\3\0B\4\2\0029\4\4\4=\4\6\3=\3\b\2B\0\2\1K\0\1\0\15formatters\1\0\0\16insert_text\1\0\0\20remove_existing\23copilot_cmp.format\nsetup\16copilot_cmp\frequire\0", "config", "copilot-cmp")
 
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]

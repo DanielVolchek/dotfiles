@@ -65,9 +65,8 @@ return packer.startup(function(use)
 	--tab bar
 	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
-	-- project search with telescope (fp)
-
-	use("szw/vim-maximizer") -- maximizes and restores current window
+	-- maximizes and restores current window
+	use("szw/vim-maximizer")
 
 	use("ThePrimeagen/harpoon") -- bookmarks
 
@@ -104,7 +103,7 @@ return packer.startup(function(use)
 
 	-- todo
 	-- use("DanielVolchek/tailiscope.nvim")
-	use("/Users/danielvolchek/code/tailiscope")
+	use("/Users/danielvolchek/code/plugins/tailiscope")
 
 	--which key for keybindings
 	use("folke/which-key.nvim")
@@ -115,11 +114,7 @@ return packer.startup(function(use)
 		after = "lualine.nvim", -- whichever statusline plugin you use here
 		config = function()
 			vim.defer_fn(function()
-				require("copilot").setup({
-					formatters = {
-						insert_text = require("copilot_cmp.format").remove_existing,
-					},
-				})
+				require("copilot").setup({})
 			end, 100)
 		end,
 	})
@@ -133,7 +128,11 @@ return packer.startup(function(use)
 		"zbirenbaum/copilot-cmp",
 		after = { "copilot.lua" },
 		config = function()
-			require("copilot_cmp").setup()
+			require("copilot_cmp").setup({
+				formatters = {
+					insert_text = require("copilot_cmp.format").remove_existing,
+				},
+			})
 		end,
 	})
 

@@ -24,5 +24,3 @@ vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
---
---
