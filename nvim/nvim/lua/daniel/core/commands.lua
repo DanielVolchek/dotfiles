@@ -10,6 +10,8 @@ vim.cmd("command Dash Dashboard")
 vim.cmd("command CDCurrentLocal lcd %:p:h")
 vim.cmd("command CDCurrentGlobal lcd %:p:h")
 
+vim.cmd("command OpenObsidian e " .. config.obsidianDir)
+
 local group = vim.api.nvim_create_augroup("cmdlinesize", { clear = true })
 
 vim.api.nvim_create_autocmd("CmdlineEnter", {
@@ -25,7 +27,3 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 	end,
 	group = group,
 })
-
-vim.keymap.set("n", "<leader>ev", function()
-	print("Hello World!")
-end, { silent = true })

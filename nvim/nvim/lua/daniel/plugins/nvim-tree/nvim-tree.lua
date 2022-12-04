@@ -31,6 +31,9 @@ local function edit_or_open()
 end
 
 local opts = {
+	hijack_directories = {
+		enable = false,
+	},
 	open_on_setup = true,
 	open_on_tab = true,
 	hijack_cursor = true,

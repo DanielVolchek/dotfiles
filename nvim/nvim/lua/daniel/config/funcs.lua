@@ -23,10 +23,17 @@ config.sourcedir = function(dir)
 	end
 end
 
-config.SearchWithoutJump = function(dir)
+config.searchWithoutJump = function(dir)
 	vim.cmd(string.format("normal! %s", dir))
 	local count = vim.fn.searchcount().total
 	if count > 1 then
 		vim.cmd("normal! ")
 	end
+end
+
+config.getDay = function()
+	-- get date
+	local date = vim.fn.strftime("%c")
+	-- split by space and get first element
+	return vim.split(date, " ", { plain = true })[1]
 end

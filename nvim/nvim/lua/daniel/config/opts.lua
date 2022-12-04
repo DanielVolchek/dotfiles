@@ -12,3 +12,5 @@ config.bonsai = {
 	life = 28,
 	live = true,
 }
+
+config.obsidianDir = "~/obsidian-vault/"

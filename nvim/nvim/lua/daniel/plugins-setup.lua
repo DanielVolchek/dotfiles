@@ -167,6 +167,9 @@ return packer.startup(function(use)
 		end,
 	})
 
+	--obsidian integration
+	use("epwalsh/obsidian.nvim")
+
 	-- neovim plugin development tools
 	use("folke/neodev.nvim")
 	-- use("bfredl/nvim-luadev")

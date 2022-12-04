@@ -21,6 +21,12 @@ end)
 vim.keymap.set("n", "==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
 vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
 
+-- insert mode movement keymaps
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-j>", "<Down>")
+vim.keymap.set("i", "<C-k>", "<Up>")
+vim.keymap.set("i", "<C-l>", "<Right>")
+
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
