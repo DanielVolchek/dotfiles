@@ -50,3 +50,4 @@ vim.keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open 
 vim.keymap.set("n", "<C-w>f", "<cmd>Telescope find_files<cr>", { desc = "Find files in CWD" })
 
 vim.keymap.set("n", "fw", "<cmd>Telescope tailiscope categories<cr>")
+vim.keymap.set("n", "fl", "<cmd>Telescope help_string<cr>")

@@ -56,6 +56,7 @@ return packer.startup(function(use)
 	use("catppuccin/nvim")
 	use("bluz71/vim-nightfly-guicolors") -- current choice
 	use("marko-cerovac/material.nvim")
+	use("frenzyexists/aquarium-vim")
 
 	-- change color of line num based on mode
 	use("melkster/modicator.nvim")
@@ -99,7 +100,8 @@ return packer.startup(function(use)
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	-- use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	use({ "/Users/danielvolchek/code/plugins/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- todo
 	-- use("DanielVolchek/tailiscope.nvim")

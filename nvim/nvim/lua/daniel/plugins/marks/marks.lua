@@ -6,7 +6,7 @@ end
 marks.setup({
 	mappings = {
 		preview = "m;",
-		set_next = "m<leader>",
+		set_next = "mm",
 		next = "m.",
 		prev = "m,",
 		delete_line = "dmm",

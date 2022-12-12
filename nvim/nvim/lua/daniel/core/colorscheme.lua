@@ -38,6 +38,7 @@ tokyonight.setup({
 	end,
 })
 
+-- current fav = colorscheme tokyonight
 local scheme = "colorscheme tokyonight"
 local status, _ = pcall(vim.cmd, scheme)
 if not status then
@@ -69,6 +70,7 @@ local colors = {
 	nontext = "#3B4048",
 }
 
+-- changes color of line number based on mode
 local status_, modicator = pcall(require, "modicator")
 if not status_ then
 	return

@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
     url = "https://github.com/vim-scripts/ReplaceWithRegister"
   },
+  ["aquarium-vim"] = {
+    loaded = true,
+    path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/aquarium-vim",
+    url = "https://github.com/frenzyexists/aquarium-vim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -336,7 +341,7 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    url = "/Users/danielvolchek/code/plugins/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,
