@@ -184,6 +184,12 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure java server
+lspconfig["jdtls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure C++ server
 lspconfig["clangd"].setup({
 	capabilities = capabilities,

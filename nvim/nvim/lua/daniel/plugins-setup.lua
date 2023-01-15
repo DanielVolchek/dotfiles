@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use("bluz71/vim-nightfly-guicolors") -- current choice
 	use("marko-cerovac/material.nvim")
 	use("frenzyexists/aquarium-vim")
+	use("ellisonleao/gruvbox.nvim")
 
 	-- change color of line num based on mode
 	use("melkster/modicator.nvim")
@@ -86,6 +87,9 @@ return packer.startup(function(use)
 
 	-- vs-code like icons
 	use("kyazdani42/nvim-web-devicons")
+
+	-- movement
+	use("ggandor/leap.nvim")
 
 	-- marks
 	use("chentoast/marks.nvim")

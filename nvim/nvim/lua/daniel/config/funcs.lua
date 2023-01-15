@@ -1,3 +1,5 @@
+_G.config = _G.config or {}
+
 config.log = function(...)
 	if config.verbose then
 		vim.notify(...)

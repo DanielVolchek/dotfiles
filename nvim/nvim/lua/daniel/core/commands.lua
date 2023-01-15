@@ -7,10 +7,10 @@ vim.cmd("command EditConfig e ~/.config/nvim/init.lua")
 vim.cmd("command EditConf e ~/.config/nvim/init.lua")
 
 vim.cmd("command Dash Dashboard")
-vim.cmd("command CDCurrentLocal lcd %:p:h")
-vim.cmd("command CDCurrentGlobal lcd %:p:h")
+vim.cmd("command CD lcd %:p:h")
+-- vim.cmd("command CDCurrentGlobal lcd %:p:h")
 
-vim.cmd("command OpenObsidian e " .. config.obsidianDir)
+--vim.cmd("command OpenObsidian e " .. config.obsidianDir)
 
 local group = vim.api.nvim_create_augroup("cmdlinesize", { clear = true })
 
