@@ -30,17 +30,18 @@ brew install jq # json parser
 brew install lazygit # git tui
 brew install glow # markdown viewer
 brew install bat # better cat
-brew install spotify-tui # spotify tui
-brew install spotifyd # spotify daemon
+#brew install spotify-tui # spotify tui
+#brew install spotifyd # spotify daemon
 brew install htop # show processes
 brew install fzf # fuzzy finder
-brew install fontforge # custom nerd font patcher
-brew install rust # rust lang
+#brew install fontforge # custom nerd font patcher
+#brew install rust # rust lang
 
 # install essential casks
-brew install --cask iterm2 # best term emulator
-brew install --cask google-chrome # might need to switch to firefox after manifest v3
-brew install --cask insomnia # 
+#brew install --cask iterm2 # best term emulator
+#brew install --cask google-chrome # might need to switch to firefox after manifest v3
+brew install --cask insomnia # API endpoint tester
+brew install --cask raycast # better spotlight search
 brew install --cask alt-tab # better icons in cmd-tab switcher
 brew install --cask font-caskaydia-cove-nerd-font # nice font
 brew install --cask font-hack-nerd-font # nice font
