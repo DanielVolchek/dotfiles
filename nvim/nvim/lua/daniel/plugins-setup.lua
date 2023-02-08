@@ -59,8 +59,9 @@ return packer.startup(function(use)
 	use("frenzyexists/aquarium-vim")
 	use("ellisonleao/gruvbox.nvim")
 
-	-- change color of line num based on mode
-	use("melkster/modicator.nvim")
+	-- smooth scroll
+	use("karb94/neoscroll.nvim")
+
 	-- symboltree
 	use("simrat39/symbols-outline.nvim")
 
@@ -76,6 +77,9 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("tpope/vim-repeat") -- repeat plugin command with .
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
+
+	-- colored line num to indicate mode
+	use("melkster/modicator.nvim")
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
@@ -97,19 +101,23 @@ return packer.startup(function(use)
 	--tabout
 	use("abecodes/tabout.nvim")
 	-- dashboard
-	use("glepnir/dashboard-nvim")
+	use({
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-	-- use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-	use({ "/Users/danielvolchek/code/plugins/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	-- use({ "/Users/danielvolchek/code/plugins/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- todo
-	-- use("DanielVolchek/tailiscope.nvim")
-	use("/Users/danielvolchek/code/plugins/tailiscope")
+	use("DanielVolchek/tailiscope.nvim")
+	-- use("/Users/danielvolchek/code/plugins/tailiscope")
 
 	--which key for keybindings
 	use("folke/which-key.nvim")
@@ -159,6 +167,7 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
 	use("folke/trouble.nvim") -- lsp diagnostics"
+	use("mfussenegger/nvim-jdtls") -- java language server support
 
 	use("nvim-lua/lsp-status.nvim")
 	-- formatting & linting

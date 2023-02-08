@@ -8,6 +8,7 @@ vim.cmd("command EditConf e ~/.config/nvim/init.lua")
 
 vim.cmd("command Dash Dashboard")
 vim.cmd("command CD lcd %:p:h")
+vim.cmd("command Diff :w !diff % -")
 -- vim.cmd("command CDCurrentGlobal lcd %:p:h")
 
 --vim.cmd("command OpenObsidian e " .. config.obsidianDir)

@@ -53,6 +53,9 @@ local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
+	if client.name == "eslint" then
+		P(client)
+	end
 	-- attach signature
 	-- local sig_status, signature = pcall(require, "lsp_signature")
 	-- if sig_status then
@@ -146,6 +149,7 @@ typescript.setup({
 lspconfig["eslint"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	cmd = { "eslint_d", "--stdio" },
 })
 
 -- configure html server

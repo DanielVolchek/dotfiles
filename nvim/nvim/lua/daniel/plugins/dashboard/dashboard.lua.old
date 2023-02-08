@@ -35,7 +35,6 @@ local customheaders = {
 	},
 }
 
-local preview = {}
 if vim.fn.executable("cbonsai") == 1 then
 	-- check if cbonsai exists
 	local command = "cbonsai -p"
@@ -61,116 +60,67 @@ if vim.fn.executable("cbonsai") == 1 then
 	if config.bonsai.live then
 		command = command .. " --live"
 	end
-	preview.command = command .. " | cat"
-	preview.file_path = ""
+	db.preview_command = command .. " | cat"
+	db.preview_file_path = ""
 else
 	-- notify user and set preview to cat backup file
 	local notify = false
 	if notify then
 		vim.notify("cbonsai not installed, displaying static backup file - check dashboard/dashboard.lua for more info")
 	end
-	preview.file_path = vim.fn.stdpath("config") .. "/lua/daniel/plugins/dashboard/space_header.txt"
-	preview.command = "cat"
+	db.preview_file_path = vim.fn.stdpath("config") .. "/lua/daniel/plugins/dashboard/space_header.txt"
+	db.preview_command = "cat"
 end
 
-preview.file_height = 20
-preview.file_width = 75
+db.preview_file_height = 20
+db.preview_file_width = 75
 
 -- auto save settings
 db.session_auto_save_on_exit = true
 db.session_directory = home .. "/.autosavenvim/"
 
--- db.custom_center = {
--- 	{
--- 		icon = "  ",
--- 		desc = "Last Session          ",
--- 		action = "SessionLoad",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Recently opened files ",
--- 		action = "Telescope oldfiles",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "File Browser          ",
--- 		action = "NvimTreeToggle",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Telescope             ",
--- 		action = "Telescope ",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Find File             ",
--- 		action = "Telescope find_files find_command=rg,--hidden,--files",
--- 	},
--- 	{
--- 		icon = "  ",
--- 		desc = "Find String           ",
--- 		action = "Telescope live_grep",
--- 	},
--- 	-- {
--- 	-- 	icon = "  ",
--- 	-- 	desc = "Find Project          ",
--- 	-- 	action = "Telescope projects",
--- 	-- },
--- 	{
--- 		icon = "  ",
--- 		desc = "Config                ",
--- 		action = "EditConfig",
--- 	},
--- }
+db.custom_center = {
+	{
+		icon = "  ",
+		desc = "Last Session          ",
+		action = "SessionLoad",
+	},
+	{
+		icon = "  ",
+		desc = "Recently opened files ",
+		action = "Telescope oldfiles",
+	},
+	{
+		icon = "  ",
+		desc = "File Browser          ",
+		action = "NvimTreeToggle",
+	},
+	{
+		icon = "  ",
+		desc = "Telescope             ",
+		action = "Telescope ",
+	},
+	{
+		icon = "  ",
+		desc = "Find File             ",
+		action = "Telescope find_files find_command=rg,--hidden,--files",
+	},
+	{
+		icon = "  ",
+		desc = "Find String           ",
+		action = "Telescope live_grep",
+	},
+	-- {
+	-- 	icon = "  ",
+	-- 	desc = "Find Project          ",
+	-- 	action = "Telescope projects",
+	-- },
+	{
+		icon = "  ",
+		desc = "Config                ",
+		action = "EditConfig",
+	},
+}
 
 db.custom_footer = { "" }
-db.setup({
-	theme = "doom",
-	config = {
-		header = {},
-		center = {
-			{
-				icon = "  ",
-				desc = "Last Session          ",
-				action = "SessionLoad",
-			},
-			{
-				icon = "  ",
-				desc = "Recently opened files ",
-				action = "Telescope oldfiles",
-			},
-			{
-				icon = "  ",
-				desc = "File Browser          ",
-				action = "NvimTreeToggle",
-			},
-			{
-				icon = "  ",
-				desc = "Telescope             ",
-				action = "Telescope ",
-			},
-			{
-				icon = "  ",
-				desc = "Find File             ",
-				action = "Telescope find_files find_command=rg,--hidden,--files",
-			},
-			{
-				icon = "  ",
-				desc = "Find String           ",
-				action = "Telescope live_grep",
-			},
-			-- {
-			-- 	icon = "  ",
-			-- 	desc = "Find Project          ",
-			-- 	action = "Telescope projects",
-			-- },
-			{
-				icon = "  ",
-				desc = "Config                ",
-				action = "EditConfig",
-			},
-		},
-		footer = {},
-	},
-	preview = preview,
-})
+db.setup({})

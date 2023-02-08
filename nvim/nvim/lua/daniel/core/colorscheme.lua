@@ -79,16 +79,21 @@ end
 modicator.setup({
 	highlights = {
 		modes = {
-			["i"] = colors.bright_cyan,
-			["n"] = colors.light_green,
-			["v"] = colors.bright_magenta,
-			["V"] = colors.bright_magenta,
-			["R"] = colors.bright_red,
-			["t"] = colors.bright_magenta,
-			["c"] = colors.bright_yellow,
+			["i"] = { foreground = colors.bright_cyan },
+			["n"] = { foreground = colors.light_green },
+			["v"] = { foreground = colors.bright_magenta },
+			["V"] = { foreground = colors.bright_magenta },
+			["R"] = { foreground = colors.bright_red },
+			["t"] = { foreground = colors.bright_magenta },
+			["c"] = { foreground = colors.bright_yellow },
 		},
 	},
 })
+
+-- modes = {
+--   ['n'] = {
+--     foreground = M.get_highlight_fg('CursorLineNr'),
+--   },
 
 if config.transparent then
 	vim.api.nvim_set_hl(0, "Normal", { ctermbg = "NONE", bg = "NONE" })
