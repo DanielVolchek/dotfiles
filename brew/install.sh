@@ -30,6 +30,7 @@ brew install jq # json parser
 brew install lazygit # git tui
 brew install glow # markdown viewer
 brew install bat # better cat
+brew install z # jump around directories
 #brew install spotify-tui # spotify tui
 #brew install spotifyd # spotify daemon
 brew install htop # show processes

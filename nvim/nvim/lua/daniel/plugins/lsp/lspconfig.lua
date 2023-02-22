@@ -117,11 +117,6 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
-	if client.name == "tailwindcss" then
-		require("telescope").load_extension("tailiscope")
-		keymap.set("n", "<leader>fw", ":Telescope tailiscope base<CR>")
-	end
-
 	if whichkey_status then
 		which_key.register(mappings, { prefix = "" })
 	end
@@ -167,7 +162,7 @@ lspconfig["tailwindcss"].setup({
 -- configure emmet snippets
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
-	filetypes = { "html", "css", "typescriptreact", "javascriptreact", "sass", "scss" },
+	filetypes = { "html", "typescriptreact", "javascriptreact" },
 })
 
 -- configure astro server

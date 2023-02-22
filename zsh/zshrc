@@ -14,6 +14,26 @@ for file in $files; do
   [ -f $HOME/$file ] && source $HOME/$file || echo "Failed to source $file"
 done
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# add home dir .bin to path
+export PATH=$HOME/.bin:$PATH
+
+# outputs todo from obsidian workplace
+NOTE_PATH=$HOME/work/work_notes/TODO.md
+
+if [[ -s $NOTE_PATH ]]; then
+
+  # if lolcat exists and is executable
+  if hash lolcat 2>/dev/null
+  then
+    echo TODO: | lolcat -t -F 0.85
+  else
+    echo TODO:
+  fi
+  if hash glow 2>/dev/null; then
+    glow $NOTE_PATH
+  fi
+fi
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

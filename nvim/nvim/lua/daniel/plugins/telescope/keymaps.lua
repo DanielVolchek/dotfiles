@@ -49,5 +49,5 @@ vim.keymap.set(
 vim.keymap.set("n", "<C-w>b", "<cmd>Telescope buffers<cr>", { desc = "List open buffers" })
 vim.keymap.set("n", "<C-w>f", "<cmd>Telescope find_files<cr>", { desc = "Find files in CWD" })
 
-vim.keymap.set("n", "fw", "<cmd>Telescope tailiscope categories<cr>")
-vim.keymap.set("n", "fl", "<cmd>Telescope help_string<cr>")
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope tailiscope categories<cr>")
+vim.keymap.set("n", "<leader>fl", "<cmd>Telescope help_string<cr>")

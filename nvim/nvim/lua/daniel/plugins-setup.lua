@@ -59,9 +59,6 @@ return packer.startup(function(use)
 	use("frenzyexists/aquarium-vim")
 	use("ellisonleao/gruvbox.nvim")
 
-	-- smooth scroll
-	use("karb94/neoscroll.nvim")
-
 	-- symboltree
 	use("simrat39/symbols-outline.nvim")
 

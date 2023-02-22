@@ -79,7 +79,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # zsh-autosuggestions
+  z
+  zsh-syntax-highlighting
   )
 
 # zsh-autosuggestions config
@@ -121,6 +122,6 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-source /Users/danielvolchek/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/danielvolchek/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/etc/profile.d/z.sh
+# source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/etc/profile.d/z.sh

@@ -81,6 +81,7 @@ telescope.setup({
 	extensions = {
 		tailiscope = {
 			register = '"',
+			default = "all",
 		},
 	},
 })
