@@ -38,8 +38,9 @@ tokyonight.setup({
 	end,
 })
 
--- current fav = colorscheme tokyonight
-local scheme = "colorscheme tokyonight"
+-- current fav = tokyonight
+-- current = carbonfox
+local scheme = "colorscheme carbonfox"
 local status, _ = pcall(vim.cmd, scheme)
 if not status then
 	return
@@ -77,17 +78,17 @@ if not status_ then
 end
 
 modicator.setup({
-	highlights = {
-		modes = {
-			["i"] = { foreground = colors.bright_cyan },
-			["n"] = { foreground = colors.light_green },
-			["v"] = { foreground = colors.bright_magenta },
-			["V"] = { foreground = colors.bright_magenta },
-			["R"] = { foreground = colors.bright_red },
-			["t"] = { foreground = colors.bright_magenta },
-			["c"] = { foreground = colors.bright_yellow },
-		},
-	},
+	-- highlights = {
+	-- 	modes = {
+	-- 		["i"] = { foreground = colors.bright_cyan },
+	-- 		["n"] = { foreground = colors.light_green },
+	-- 		["v"] = { foreground = colors.bright_magenta },
+	-- 		["V"] = { foreground = colors.bright_magenta },
+	-- 		["R"] = { foreground = colors.bright_red },
+	-- 		["t"] = { foreground = colors.bright_magenta },
+	-- 		["c"] = { foreground = colors.bright_yellow },
+	-- 	},
+	-- },
 })
 
 -- modes = {

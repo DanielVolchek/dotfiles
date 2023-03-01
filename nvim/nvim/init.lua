@@ -22,3 +22,7 @@ config.sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
 
 --load maps
 -- config.loadmaps(config.maps)
+
+-- disable comment continuation
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

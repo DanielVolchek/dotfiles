@@ -16,6 +16,7 @@ end, { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>bC", "<cmd>bd!<CR>", { desc = "Close Buffer" })
 -- c-w binds
 vim.keymap.set("n", "<C-w>m", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Current Split" })
+vim.keymap.set("n", "<C-w>z", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Current Split" })
 vim.keymap.set("n", "<C-w>c", function()
 	CloseIfLast()
 end, { desc = "Close Buffer" })

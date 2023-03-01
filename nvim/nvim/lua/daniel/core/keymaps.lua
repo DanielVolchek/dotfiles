@@ -31,6 +31,10 @@ vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 
+-- newline without going into insert mode
+vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
+vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
+
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar

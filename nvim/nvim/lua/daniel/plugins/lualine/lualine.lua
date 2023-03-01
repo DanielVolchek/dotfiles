@@ -39,17 +39,17 @@ theme.command = {
 }
 
 -- lsp-status component
-local getlspstatus = function()
-	local _ok, lsp_status = pcall(require, "lsp-status")
-	if not _ok or #vim.lsp.get_active_clients() <= 0 then
-		return ""
-	end
-	local status = lsp_status.status()
-	if #status > 35 then
-		return status:sub(1, 35) .. "..."
-	end
-	return status
-end
+-- local getlspstatus = function()
+-- 	local _ok, lsp_status = pcall(require, "lsp-status")
+-- 	if not _ok or #vim.lsp.get_active_clients() <= 0 then
+-- 		return ""
+-- 	end
+-- 	local status = lsp_status.status()
+-- 	if #status > 35 then
+-- 		return status:sub(1, 35) .. "..."
+-- 	end
+-- 	return status
+-- end
 -- configure lualine with modified theme
 lualine.setup({
 	sections = {
@@ -58,12 +58,11 @@ lualine.setup({
 				"mode",
 			},
 		},
-
-		lualine_x = {
-			{
-				getlspstatus,
-			},
-		},
+		-- lualine_x = {
+		-- 	{
+		-- 		getlspstatus,
+		-- 	},
+		-- },
 	},
 
 	options = {

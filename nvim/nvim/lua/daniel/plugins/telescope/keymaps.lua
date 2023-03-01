@@ -11,7 +11,7 @@ vim.keymap.set(
 	{ desc = " list open buffers in current neovim instance" }
 ) -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = " list available help tags" }) -- list available help tags
-vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<cr>", { desc = " list frecency projects" }) -- list frecency projects
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope<cr>", { desc = " list pickers" }) -- list pickers
 vim.keymap.set(
 	"n",
 	"<leader>fm",

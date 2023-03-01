@@ -10,7 +10,7 @@ config.bonsai = {
 	waittime = 10,
 	multiplier = 3,
 	life = 28,
-	live = true,
+	live = false,
 }
 
 config.obsidianDir = "~/obsidian-vault/"
