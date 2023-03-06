@@ -1,9 +1,18 @@
 -- buffers
 local CloseIfLast = function()
-	-- local count = vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
-	local count = #vim.api.nvim_tabpage_list_wins(0)
-	if count == 1 then
+	local split_count = #vim.api.nvim_tabpage_list_wins(0)
+	-- if only one split close buffer
+	if split_count == 1 then
+		-- if last buffer close nvim
+		local buf_count = vim.fn.len(vim.fn.getbufinfo({ buflisted = 1 }))
+		P("count is ")
+		P(buf_count)
+		if buf_count == 1 then
+			vim.cmd("wq")
+		end
+		-- otherwise close the buffer
 		vim.cmd("BufferClose")
+	-- if more than one window close split
 	else
 		vim.cmd("normal! c")
 	end

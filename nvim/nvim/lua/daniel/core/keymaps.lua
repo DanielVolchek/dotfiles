@@ -35,6 +35,11 @@ vim.keymap.set("i", "<C-l>", "<Right>")
 vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 
+-- Quickfix keymaps
+vim.keymap.set("n", "<leader>q", "<cmd>copen<CR>", { desc = "Open Quickfix" })
+vim.keymap.set("n", "<leader>qe", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
+vim.keymap.set("n", "<leader>qw", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
+
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
