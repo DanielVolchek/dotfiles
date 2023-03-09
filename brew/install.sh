@@ -26,6 +26,7 @@ brew install vim # always good to have
 brew install neovim # <3
 brew install ncurses # for neovim
 brew install tmux # terminal multiplexer
+brew install tmate # tmux over ssh
 brew install jq # json parser
 brew install lazygit # git tui
 brew install glow # markdown viewer

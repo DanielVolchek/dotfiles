@@ -381,6 +381,11 @@ _G.packer_plugins = {
     path = "/Users/daniel.volchek/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/Users/daniel.volchek/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/daniel.volchek/.local/share/nvim/site/pack/packer/start/vim-maximizer",

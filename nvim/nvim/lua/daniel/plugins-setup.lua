@@ -113,6 +113,9 @@ return packer.startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 
+	-- sql browser
+	use("tpope/vim-dadbod")
+
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
@@ -206,6 +209,9 @@ return packer.startup(function(use)
 	-- git integration
 	-- use("kdheepak/lazygit.nvim")
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	-- leap nvim
+	use("ggandor/leap.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

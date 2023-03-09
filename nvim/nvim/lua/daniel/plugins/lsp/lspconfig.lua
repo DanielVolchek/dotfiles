@@ -53,9 +53,6 @@ local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
-	if client.name == "eslint" then
-		P(client)
-	end
 	-- attach signature
 	-- local sig_status, signature = pcall(require, "lsp_signature")
 	-- if sig_status then

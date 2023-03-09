@@ -28,6 +28,7 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"lua_ls",
 		"rust_analyzer",
+		"jdtls",
 		"pylsp",
 	},
 	-- auto-install configured servers (with lspconfig)
@@ -41,6 +42,7 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 		"rustfmt", -- rust formatter
+		"google_java_format", -- java formatter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
