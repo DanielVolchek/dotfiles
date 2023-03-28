@@ -9,6 +9,8 @@ vim.cmd("command EditConf e ~/.config/nvim/init.lua")
 vim.cmd("command Dash Dashboard")
 vim.cmd("command CD lcd %:p:h")
 vim.cmd("command Diff :w !diff % -")
+
+vim.cmd("command SplitCount :lua P(#vim.api.nvim_tabpage_list_wins(0))")
 -- vim.cmd("command CDCurrentGlobal lcd %:p:h")
 
 --vim.cmd("command OpenObsidian e " .. config.obsidianDir)
@@ -24,7 +26,15 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
 
 vim.api.nvim_create_autocmd("CmdlineLeave", {
 	callback = function()
-		vim.o.cmdheight = 0
+		-- todo change back
+		vim.o.cmdheight = 1
+	end,
+	group = group,
+})
+
+vim.api.nvim_create_autocmd("WinNew", {
+	callback = function()
+		P("New Window")
 	end,
 	group = group,
 })

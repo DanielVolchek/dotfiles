@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch
 -- auto install packer if not installed
 local ensure_packer = function()
 	local fn = vim.fn

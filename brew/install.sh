@@ -49,6 +49,7 @@ brew install --cask font-caskaydia-cove-nerd-font # nice font
 brew install --cask font-hack-nerd-font # nice font
 brew install --cask visual-studio-code # good to have just in case but I never use it
 brew install --cask google-drive # syncs files, at the end because it asks for password to install
+brew install --cask arc # alternate browser
 
 #cascadia code
 #oxygen mono
