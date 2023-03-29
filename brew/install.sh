@@ -32,6 +32,7 @@ brew install lazygit # git tui
 brew install glow # markdown viewer
 brew install bat # better cat
 brew install z # jump around directories
+brew install httpie # http client for terminal
 #brew install spotify-tui # spotify tui
 #brew install spotifyd # spotify daemon
 brew install htop # show processes
@@ -40,16 +41,22 @@ brew install fzf # fuzzy finder
 #brew install rust # rust lang
 
 # install essential casks
-#brew install --cask iterm2 # best term emulator
-#brew install --cask google-chrome # might need to switch to firefox after manifest v3
+brew install --cask iterm2 # best term emulator
+brew install --cask arc # primary browser 
+brew install --cask google-chrome # basic browser for testing
+brew install --cask spotify # music player
+brew install --cask amethyst # manage windows
 brew install --cask insomnia # API endpoint tester
 brew install --cask raycast # better spotlight search
 brew install --cask alt-tab # better icons in cmd-tab switcher
 brew install --cask font-caskaydia-cove-nerd-font # nice font
 brew install --cask font-hack-nerd-font # nice font
 brew install --cask visual-studio-code # good to have just in case but I never use it
+brew install --cask discord # team communication 
+brew install --cask slack # team communication 
+brew install --cask ticktick # todo list app
 brew install --cask google-drive # syncs files, at the end because it asks for password to install
-brew install --cask arc # alternate browser
+brew install --cask zoom # video conference software
 
 #cascadia code
 #oxygen mono
