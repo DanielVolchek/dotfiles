@@ -8,3 +8,6 @@ bindkey -M viins 'jk' vi-cmd-mode
 
 export EDITOR=nvim
 
+# add user dir bin
+export PATH=$PATH:$HOME/bin
+
