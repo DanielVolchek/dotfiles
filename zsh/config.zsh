@@ -6,7 +6,11 @@ export KEYTIMEOUT=20
 
 bindkey -M viins 'jk' vi-cmd-mode
 
+# set editor to open nvim for scripts that open an editor
 export EDITOR=nvim
+
+# set case sensitivity to ignore for "z"
+export ZSHS_CASE=ignore
 
 # add user dir bin
 export PATH=$PATH:$HOME/bin

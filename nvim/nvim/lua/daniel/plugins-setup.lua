@@ -211,8 +211,11 @@ return packer.startup(function(use)
 	-- use("kdheepak/lazygit.nvim")
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-	-- smart splits plugin
+	-- better split resizing
 	use("mrjones2014/smart-splits.nvim")
+
+	-- open files in nvim terminal in nvim
+	use("willothy/flatten.nvim")
 
 	-- leap nvim
 	use("ggandor/leap.nvim")
