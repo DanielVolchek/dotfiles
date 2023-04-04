@@ -1,5 +1,8 @@
 # source everything
 
+# work or home
+ENV="HOME"
+
 files=(
   ".beforeprompt.zsh"
   ".instantprompt.zsh"
