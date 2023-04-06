@@ -33,6 +33,7 @@ brew install glow # markdown viewer
 brew install bat # better cat
 brew install z # jump around directories
 brew install httpie # http client for terminal
+brew install ripgrep # live grep for neovim telescope
 #brew install spotify-tui # spotify tui
 #brew install spotifyd # spotify daemon
 brew install htop # show processes

@@ -50,6 +50,9 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- undo tree
+	use("mbbill/undotree")
+
 	--colorschemes
 	use("Mofiqul/dracula.nvim")
 	use("folke/tokyonight.nvim")
@@ -215,6 +218,7 @@ return packer.startup(function(use)
 	use("mrjones2014/smart-splits.nvim")
 
 	-- open files in nvim terminal in nvim
+	-- todo get this working
 	use("willothy/flatten.nvim")
 
 	-- leap nvim
