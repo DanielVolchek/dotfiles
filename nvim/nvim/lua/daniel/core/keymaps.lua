@@ -31,6 +31,9 @@ vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 
+-- remap 0 to ^ (go to first character of text instead of first character of line)
+vim.keymap.set("n", "0", "^")
+
 -- newline without going into insert mode
 vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
@@ -39,6 +42,10 @@ vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 vim.keymap.set("n", "<leader>q", "<cmd>copen<CR>", { desc = "Open Quickfix" })
 vim.keymap.set("n", "<leader>qe", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
 vim.keymap.set("n", "<leader>qw", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
+
+-- splits with tmux maps
+vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
 
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua

@@ -221,9 +221,6 @@ return packer.startup(function(use)
 	-- todo get this working
 	use("willothy/flatten.nvim")
 
-	-- leap nvim
-	use("ggandor/leap.nvim")
-
 	if packer_bootstrap then
 		require("packer").sync()
 	end

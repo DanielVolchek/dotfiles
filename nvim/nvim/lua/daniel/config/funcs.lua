@@ -6,21 +6,26 @@ config.log = function(...)
 	end
 end
 
+-- source files (probably need to change how this works for lazy.nvim)
 config.sourcedir = function(dir)
 	if not dir then
 		vim.notify("Error: Please provide directory to sourcedir function")
 		return
 	end
 	local files = vim.fn.readdir(dir)
-	for _, file in ipairs(files) do
-		--			why lua no have continue D:
+	local plugincount = 28
+
+	for i, file in ipairs(files) do
 		if file ~= "README.md" then
+			-- if file ~= "lsp" then
+			-- if i < plugincount / 2 then
 			config.log("Sourcing " .. file)
 			local status, ok = pcall(require, config.plugindir .. file)
 			if not status then
 				vim.notify("Failed to load plugin " .. file .. ok)
 				config.log("Error: " .. ok)
 			end
+			-- end
 		end
 	end
 end

@@ -1,8 +1,10 @@
 -- todo
+
 -- add mini
 -- look into treesitter function surround
 
 -- eagerly disable netrw for nvim-tree
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -21,6 +23,7 @@ require("daniel.config")
 config.sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
 
 --load maps
+
 -- config.loadmaps(config.maps)
 
 -- disable comment continuation

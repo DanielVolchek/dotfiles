@@ -31,10 +31,3 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 	end,
 	group = group,
 })
-
-vim.api.nvim_create_autocmd("WinNew", {
-	callback = function()
-		P("New Window")
-	end,
-	group = group,
-})

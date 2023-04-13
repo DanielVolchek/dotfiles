@@ -9,3 +9,4 @@ if ! tmux info &> /dev/null; then
   # if tmux server exists reattach else create new session to allow for tmux restore
   tmux attach || tmux new
 fi
+
