@@ -10,6 +10,7 @@ files=(
   ".aliases.zsh"
   ".config.zsh"
   ".fzf.zsh"
+  ".env.zsh"
   ".others.zsh"
 )
 
