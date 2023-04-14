@@ -221,6 +221,8 @@ return packer.startup(function(use)
 	-- todo get this working
 	use("willothy/flatten.nvim")
 
+	use({ "Bryley/neoai.nvim", requires = "MunifTanjim/nui.nvim" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
