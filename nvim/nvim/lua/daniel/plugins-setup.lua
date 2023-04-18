@@ -210,9 +210,11 @@ return packer.startup(function(use)
 
 	-- better escape
 	use("max397574/better-escape.nvim")
+
 	-- git integration
 	-- use("kdheepak/lazygit.nvim")
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+	use("f-person/git-blame.nvim") -- show git blame on line
 
 	-- better split resizing
 	use("mrjones2014/smart-splits.nvim")

@@ -1,7 +1,7 @@
 # source everything
 
 # work or home
-ENV="HOME"
+ENV="WORK"
 
 files=(
   ".beforeprompt.zsh"
