@@ -3,6 +3,7 @@ config.plugindir = "daniel.plugins."
 config.user_terminals = {}
 config.maps = { i = {}, n = {}, v = {}, x = {}, t = {} }
 config.transparent = false
+config.configdir = "~/.config/nvim/"
 
 config.bonsai = {
 	infinite = true,

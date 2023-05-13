@@ -47,6 +47,14 @@ vim.keymap.set("n", "<leader>qw", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
 
+-- open buffer in textedit so it is visually selectable in a way that registers for the system
+vim.keymap.set(
+	"v",
+	"<leader>te",
+	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
+	{ desc = "Open in textedit" }
+)
+
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
