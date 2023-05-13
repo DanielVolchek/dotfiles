@@ -15,3 +15,5 @@ export ZSHS_CASE=ignore
 # add user dir bin
 export PATH=$PATH:$HOME/bin
 
+# add path to config
+export XDG_CONFIG_HOME=$HOME/.config
