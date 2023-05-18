@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-dictionary"] = {
+    loaded = true,
+    path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/cmp-dictionary",
+    url = "https://github.com/uga-rosa/cmp-dictionary"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/danielvolchek/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
