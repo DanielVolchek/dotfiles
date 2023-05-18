@@ -224,6 +224,7 @@ return packer.startup(function(use)
 	use("willothy/flatten.nvim")
 
 	use({ "Bryley/neoai.nvim", requires = "MunifTanjim/nui.nvim" })
+	use("uga-rosa/cmp-dictionary")
 
 	if packer_bootstrap then
 		require("packer").sync()

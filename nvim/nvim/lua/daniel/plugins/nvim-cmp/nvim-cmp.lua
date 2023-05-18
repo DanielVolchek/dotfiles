@@ -16,6 +16,11 @@ if not lspkind_status then
 	return
 end
 
+local cmpdict_status, cmp_dict = pcall(require, "cmp_dictionary")
+if not cmpdict_status then
+	return
+end
+
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -68,8 +73,12 @@ cmp.setup({
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" }, -- lsp
-		{ name = "copilot" },
+		{
+			name = "dictionary",
+			keyword_length = 2,
+		},
 		{ name = "luasnip" }, -- snippets
+		{ name = "copilot" },
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
 	}),
@@ -79,5 +88,12 @@ cmp.setup({
 			maxwidth = 50,
 			ellipsis_char = "...",
 		}),
+	},
+})
+
+cmp_dict.setup({})
+cmp_dict.switcher({
+	spelllang = {
+		en = "~/dotfiles/en.dict",
 	},
 })
