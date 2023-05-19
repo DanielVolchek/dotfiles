@@ -225,6 +225,7 @@ return packer.startup(function(use)
 
 	use({ "Bryley/neoai.nvim", requires = "MunifTanjim/nui.nvim" })
 	use("uga-rosa/cmp-dictionary")
+	use("stevearc/oil.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
