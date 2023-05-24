@@ -1,16 +1,13 @@
 vim.g.mapleader = " "
 
 -- visual lines
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
-
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Hide Search Highlights" })
 vim.keymap.set("n", "<leader>/", "<cmd>nohl<CR>", { desc = "Hide Search Highlights" })
 
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "J", "5j")
-vim.keymap.set("n", "K", "4k")
+vim.keymap.set("n", "K", "5k")
 
 -- search word forward without moving
 vim.keymap.set("n", "(", function()
