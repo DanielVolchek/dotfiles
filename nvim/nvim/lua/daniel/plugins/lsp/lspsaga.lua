@@ -44,4 +44,8 @@ saga.setup({
 		edit = "<CR>",
 	},
 	rename_action_quit = { "<C-c>", "<Esc>" },
+
+	ui = {
+		border = "double",
+	},
 })
