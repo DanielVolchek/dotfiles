@@ -14,14 +14,6 @@ if [ -f ~/.tmux.conf.local ]; then
     mv ~/.tmux.conf.local ~/.tmux.conf.local.bak
 fi
 
-if [-f ~/.tmate.conf]; then
-    echo "tmate.conf already exists, backing up to tmate.conf.bak"
-    mv ~/.tmate.conf ~/.tmate.conf.bak
-fi
-
 #link tmux.conf && tmux.conf.local to home
-ln -s $DIR/tmux.conf ~/.tmux.conf
-ln -s $DIR/tmux.conf.local ~/.tmux.conf.local
-ln -s $DIR/tmux.conf ~/.tmate.conf
-
-tmux source-file ~/.tmux.conf
+ln -s $DIR/tmux/tmux.conf ~/.tmux.conf
+ln -s $DIR/tmux.tmux.conf.local ~/.tmux.conf.local
