@@ -1,5 +1,5 @@
 -- buffers
-local CloseIfLast = function()
+local CloseIfLast = function(force)
 	-- local split_count = vim.cmd("echo tabpagewinnr(tabpagenr(), '$')")
 	local split_count = #vim.api.nvim_tabpage_list_wins(0)
 	-- if only one split close buffer
@@ -12,7 +12,11 @@ local CloseIfLast = function()
 		-- 	vim.cmd("wq")
 		-- end
 		-- -- otherwise close the buffer
-		vim.cmd("BufferClose")
+		local cmd = "BufferClose"
+		if force then
+			cmd = cmd .. "!"
+		end
+		vim.cmd(cmd)
 	-- if more than one window close split
 	else
 		vim.cmd("normal! c")
@@ -30,5 +34,8 @@ vim.keymap.set("n", "<C-w>z", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Cur
 vim.keymap.set("n", "<C-w>c", function()
 	CloseIfLast()
 end, { desc = "Close Buffer" })
+vim.keymap.set("n", "<C-w>C", function()
+	CloseIfLast(true)
+end, { desc = "Force close Buffer" })
 vim.keymap.set("n", "<C-w><C-l>", "<cmd>BufferNext<cr>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "<C-w><C-h>", "<cmd>BufferPrevious<cr>", { desc = "Go to previous buffer" })
