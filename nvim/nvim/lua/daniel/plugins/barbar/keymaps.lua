@@ -34,7 +34,7 @@ vim.keymap.set("n", "<C-w>z", "<cmd>MaximizerToggle<CR>", { desc = "Maximize Cur
 vim.keymap.set("n", "<C-w>c", function()
 	CloseIfLast()
 end, { desc = "Close Buffer" })
-vim.keymap.set("n", "<C-w>C", function()
+vim.keymap.set("n", "<C-w>C!", function()
 	CloseIfLast(true)
 end, { desc = "Force close Buffer" })
 vim.keymap.set("n", "<C-w><C-l>", "<cmd>BufferNext<cr>", { desc = "Go to next buffer" })
