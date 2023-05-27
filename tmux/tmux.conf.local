@@ -330,9 +330,9 @@ tmux_conf_battery_vbar_palette="gradient"
 
 # symbols used to indicate whether battery is charging or discharging
 tmux_conf_battery_status_charging="󱟠"       # U+2191
-tmux_conf_battery_status_discharging="󱟞"    # U+2193
+# tmux_conf_battery_status_discharging="󱟞"    # U+2193
 # tmux_conf_battery_status_charging="󱟡"       # U+2191
-# tmux_conf_battery_status_discharging="󱟟"    # U+2193
+tmux_conf_battery_status_discharging="󱟟"    # U+2193
 #tmux_conf_battery_status_charging="🔌"     # U+1F50C
 #tmux_conf_battery_status_discharging="🔋"  # U+1F50B
 
