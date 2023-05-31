@@ -141,7 +141,9 @@ return packer.startup(function(use)
 		after = "lualine.nvim", -- whichever statusline plugin you use here
 		config = function()
 			vim.defer_fn(function()
-				require("copilot").setup({})
+				require("copilot").setup({
+					suggestion = { enabled = false },
+				})
 			end, 100)
 		end,
 	})

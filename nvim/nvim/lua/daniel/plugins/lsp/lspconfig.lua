@@ -80,6 +80,8 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "<leader>k", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+	keymap.set("n", "<leader>ee", "<cmd>LspStart emmet_ls<CR>", opts) -- start emmet lsp server
+	keymap.set("n", "<leader>es", "<cmd>LspStop 6 (emmet_ls)<CR>", opts) -- start emmet lsp server
 
 	--register new mappings in lsp
 	local mappings = {
@@ -102,7 +104,6 @@ local on_attach = function(client, bufnr)
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
 		table.insert(mappings["<leader>"], {
 			r = {
@@ -110,7 +111,6 @@ local on_attach = function(client, bufnr)
 				f = "Rename File",
 				u = "Remove Unused",
 			},
-			["oi"] = "TS Organize Imports",
 		})
 	end
 
@@ -156,10 +156,12 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
--- configure emmet snippets
+-- -- configure emmet snippets
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	filetypes = { "html", "typescriptreact", "javascriptreact" },
+	autostart = false,
+	-- filetypes = { "html" },
 })
 
 -- configure astro server
