@@ -18,8 +18,8 @@ vim.keymap.set(
 	"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 	{ desc = " list frecency projects" }
 ) -- list frecency projects
-vim.keymap.set("n", "<leader>fo", "<cmd>Telescope resume<cr>", { desc = "Open last picker" }) -- list frecency projects
-vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Open list of recent files" }) -- list oldfiles from vim.info
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Open last picker" }) -- list frecency projects
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open list of recent files" }) -- list oldfiles from vim.info
 vim.keymap.set("n", "<leader>fn", "<cmd>Noice telescope<cr>", { desc = "Open Noice" }) -- Show Noice Outputs in Telescope picker
 -- telescope git commands (not on youtube nvim video)
 vim.keymap.set(
