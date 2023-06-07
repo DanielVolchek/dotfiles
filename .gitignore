@@ -1,3 +1,4 @@
 .DS_STORE
 raycast/PASS.txt
 zsh/env.zsh
+nvim/nvim/plugin/packer_compiled.lua
