@@ -59,6 +59,7 @@ telescope.setup({
 		},
 	},
 	defaults = {
+		path_display = { "smart" }, -- shorten path (also potentially needs change to truncate)
 		prompt_prefix = "  ",
 		file_ignore_patterns = { "node_modules", ".git" },
 		selection_caret = "❯ ",
