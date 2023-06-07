@@ -36,9 +36,9 @@ vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 
 -- Quickfix keymaps
-vim.keymap.set("n", "<leader>q", "<cmd>copen<CR>", { desc = "Open Quickfix" })
-vim.keymap.set("n", "<leader>qe", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
-vim.keymap.set("n", "<leader>qw", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
+vim.keymap.set("n", "<leader>qq", "<cmd>cclose<CR>", { desc = "Close Quickfix" })
+vim.keymap.set("n", "<leader>qw", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
+vim.keymap.set("n", "<leader>qb", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
 
 -- splits with tmux maps
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
