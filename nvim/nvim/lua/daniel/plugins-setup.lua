@@ -196,6 +196,11 @@ return packer.startup(function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
 
 	--obsidian integration
 	use("epwalsh/obsidian.nvim")
@@ -228,6 +233,9 @@ return packer.startup(function(use)
 	use({ "Bryley/neoai.nvim", requires = "MunifTanjim/nui.nvim" })
 	use("uga-rosa/cmp-dictionary")
 	use("stevearc/oil.nvim")
+
+	-- mini modules
+	use("echasnovski/mini.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
