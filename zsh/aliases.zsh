@@ -9,3 +9,4 @@ alias dc="cd"
 alias sourcezsh="source ~/.zshrc"
 alias cloneself='function _cloneself() { git clone https://github.com/danielvolchek/$1}; _cloneself'
 alias mv="mv -i"
+alias ticketmd="node $HOME/work/clover/ticketmd"
