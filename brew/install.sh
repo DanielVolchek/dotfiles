@@ -58,6 +58,7 @@ brew install --cask slack # team communication
 brew install --cask ticktick # todo list app
 brew install --cask google-drive # syncs files, at the end because it asks for password to install
 brew install --cask zoom # video conference software
+brew install --cask dash
 
 #cascadia code
 #oxygen mono
