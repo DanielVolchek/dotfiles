@@ -238,6 +238,8 @@ return packer.startup(function(use)
 	use("echasnovski/mini.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 
+	use("nvim-pack/nvim-spectre")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
