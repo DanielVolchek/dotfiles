@@ -136,34 +136,34 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- copilot lua implementation to allow cmp suggestions
-	use({
-		"zbirenbaum/copilot.lua",
-		after = "lualine.nvim", -- whichever statusline plugin you use here
-		config = function()
-			vim.defer_fn(function()
-				require("copilot").setup({
-					suggestion = { enabled = false },
-				})
-			end, 100)
-		end,
-	})
+	-- use({
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	after = "lualine.nvim", -- whichever statusline plugin you use here
+	-- 	config = function()
+	-- 		vim.defer_fn(function()
+	-- 			require("copilot").setup({
+	-- 				suggestion = { enabled = false },
+	-- 			})
+	-- 		end, 100)
+	-- 	end,
+	-- })
 	-- toggleterm
 	use("akinsho/toggleterm.nvim")
 	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup({
-				formatters = {
-					insert_text = require("copilot_cmp.format").remove_existing,
-				},
-			})
-		end,
-	})
+	-- use({
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	after = { "copilot.lua" },
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup({
+	-- 			formatters = {
+	-- 				insert_text = require("copilot_cmp.format").remove_existing,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
@@ -236,6 +236,7 @@ return packer.startup(function(use)
 
 	-- mini modules
 	use("echasnovski/mini.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
