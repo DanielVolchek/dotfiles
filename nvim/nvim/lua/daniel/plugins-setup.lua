@@ -237,6 +237,8 @@ return packer.startup(function(use)
 	-- mini modules
 	use("echasnovski/mini.nvim")
 
+	use("nvim-pack/nvim-spectre")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
