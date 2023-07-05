@@ -44,3 +44,82 @@ config.getDay = function()
 	-- split by space and get first element
 	return vim.split(date, " ", { plain = true })[1]
 end
+
+config.hasArg = function(arg)
+	for _, value in ipairs(vim.v.argv) do
+		if value == arg then
+			return true
+		end
+	end
+	return false
+end
+
+local function searchFileInCurrentDirectory(filename)
+	local currentDir = vim.fn.getcwd()
+	local success, files = pcall(vim.loop.fs_scandir, currentDir)
+	if not success then
+		print("Failed to scan current directory.")
+		return
+	end
+
+	while true do
+		local file = vim.loop.fs_scandir_next(files)
+		if file == nil then
+			break
+		end
+
+		if file == ".nvimroot" then
+			return true
+		end
+	end
+
+	return false
+end
+
+local goUpAndSetToRoot = function()
+	local currentDir = vim.fn.getcwd()
+
+	if currentDir == "/" then
+		return false
+	end
+
+	local parentDir = vim.fn.fnamemodify(currentDir, ":h")
+
+	vim.cmd("cd " .. parentDir)
+
+	return true
+end
+
+-- Example usage
+config.getRoot = function()
+	if not config.rootSearch then
+		return
+	end
+
+	local originalPath = vim.fn.getcwd()
+
+	local maxSearchDepth = config.rootMaxDepth
+
+	local iterations = 0
+	local whileLoopCondition = true
+
+	while whileLoopCondition do
+		if maxSearchDepth then
+			whileLoopCondition = iterations < maxSearchDepth
+		else
+			whileLoopCondition = true
+		end
+
+		local found = searchFileInCurrentDirectory(".nvimroot")
+
+		if not found then
+			local moved = goUpAndSetToRoot()
+			if not moved then
+				vim.cmd("cd " .. originalPath)
+				break
+			end
+		else
+			break
+		end
+	end
+end

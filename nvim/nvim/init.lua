@@ -19,10 +19,10 @@ require("daniel.core")
 --load config
 require("daniel.config")
 
+config.getRoot()
+
 -- load plugins
 config.sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
-
---load maps
 
 -- config.loadmaps(config.maps)
 
