@@ -6,22 +6,16 @@
 -- 	return
 -- end
 --
--- local filessetup = {
--- 	mappings = {
--- 		go_in = "L",
--- 		go_in_plus = "l",
--- 	},
--- }
-
--- files.setup(filessetup)
-
+-- files.setup()
+--
 -- vim.keymap.set("n", "<leader>nc", function()
 -- 	files.open(vim.api.nvim_buf_get_name(0), false)
 -- end, { desc = "Open Mini File Explorer from current file" })
-
+--
 -- vim.keymap.set("n", "<leader>nt", function()
 -- 	files.open(nil, false)
 -- end, { desc = "Open Mini File Explorer in CWD" })
+--
 
 local aistatus, ai = pcall(require, "mini.ai")
 if not aistatus then
@@ -37,7 +31,7 @@ local aisetup = {
 }
 
 ai.setup(aisetup)
-
+--
 -- local animate_status, animate = pcall(require, "mini.animate")
 -- if not animate_status then
 -- 	print("mini.animate not found")
@@ -62,4 +56,4 @@ ai.setup(aisetup)
 -- }
 --
 -- animate.setup(animate_setup)
--- gen_timing
+-- -- gen_timing
