@@ -182,6 +182,11 @@ local opts = {
 				git = {},
 			},
 		},
+		special_files = {
+			"README.md",
+			"readme.md",
+			".nvimroot",
+		},
 	},
 }
 

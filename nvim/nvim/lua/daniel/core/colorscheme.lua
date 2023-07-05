@@ -15,12 +15,13 @@ if not iconload then
 	return
 end
 
-icons.set_icon({
-	astro = {
-		icon = "異",
-		color = "#82aaff",
-		name = "Astro",
-		-- icon_hl = "#82aaff",
+icons.setup({
+	override_by_filename = {
+		[".nvimroot"] = {
+			icon = "",
+			color = "#51a0cf",
+			name = "nvimroot",
+		},
 	},
 })
 
