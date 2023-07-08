@@ -39,7 +39,9 @@ vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 vim.keymap.set("n", "<leader>qq", "<cmd>cclose<CR>", { desc = "Close Quickfix" })
 vim.keymap.set("n", "<leader>qw", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
 vim.keymap.set("n", "<leader>qb", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
+-- before
 
+-- after
 -- splits with tmux maps
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
@@ -51,6 +53,11 @@ vim.keymap.set(
 	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
 	{ desc = "Open in textedit" }
 )
+
+vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
+vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
+vim.keymap.set("n", "\\\\", ":%s:\\v::g<Left><Left><Left>")
+vim.keymap.set("v", "\\\\", ":s:\\v::g<Left><Left><Left>")
 
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
