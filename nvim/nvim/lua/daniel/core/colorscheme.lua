@@ -5,11 +5,6 @@
 -- 	"colorscheme nightfly",
 -- }
 
-local status, tokyonight = pcall(require, "tokyonight")
-if not status then
-	return
-end
-
 local iconload, icons = pcall(require, "nvim-web-devicons")
 if not iconload then
 	return
@@ -23,20 +18,6 @@ icons.setup({
 			name = "nvimroot",
 		},
 	},
-})
-
-tokyonight.setup({
-	style = "moon",
-	on_highlights = function(hl, colors)
-		hl.NvimTreeFolderIcon = {
-			bg = "NONE",
-			fg = colors.yellow,
-		}
-		hl.NvimTreeRootFolder = {
-			bold = true,
-			fg = colors.white,
-		}
-	end,
 })
 
 -- current fav = tokyonight

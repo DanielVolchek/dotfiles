@@ -2,9 +2,11 @@
 -- vim.opt.listchars:append("space:⋅")
 -- vim.opt.listchars:append("trail: ")
 require("indent_blankline").setup({
-	char = "┆",
+	-- char = "┆",
 	show_current_context = true,
-	-- show_current_context_start = true,
+	filetype_exclude = {
+		"dashboard",
+	},
 })
 
 -- vim.opt.termguicolors = true

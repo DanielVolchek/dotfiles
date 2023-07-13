@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use("marko-cerovac/material.nvim")
 	use("frenzyexists/aquarium-vim")
 	use("ellisonleao/gruvbox.nvim")
+	use("rebelot/kanagawa.nvim")
 
 	-- symboltree
 	use("simrat39/symbols-outline.nvim")

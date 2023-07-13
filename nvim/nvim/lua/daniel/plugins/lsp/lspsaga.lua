@@ -33,12 +33,15 @@ saga.setup({
 		virtual_text = false,
 	},
 
-	-- use enter to open file with finder
-	finder_action_keys = {
-		open = "<CR>",
-		vsplit = "v",
-		split = "s",
+	finder = {
+		default = "def+ref+imp",
+		keys = {
+			open = "<CR>",
+			vsplit = "v",
+			split = "s",
+		},
 	},
+	-- use enter to open file with finder
 	-- use enter to open file with definition preview
 	definition_action_keys = {
 		edit = "<CR>",

@@ -43,3 +43,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(zoxide init zsh)"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /Users/danielvolchek/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
