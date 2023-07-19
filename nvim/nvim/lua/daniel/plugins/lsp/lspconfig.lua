@@ -232,7 +232,7 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
-local omni_path = "/Users/danielvolchek/.local/share/nvim/mason/bin/omnisharp-mono"
+-- local omni_path = "/Users/danielvolchek/.local/share/nvim/mason/bin/omnisharp-mono"
 
 lspconfig["omnisharp"].setup({
 	cmd = { "omnisharp_mono", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
