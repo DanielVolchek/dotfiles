@@ -54,11 +54,6 @@ vim.keymap.set(
 	{ desc = "Open in textedit" }
 )
 
-vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
-vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
-vim.keymap.set("n", "\\\\", ":%s:\\v::g<Left><Left><Left>")
-vim.keymap.set("v", "\\\\", ":s:\\v::g<Left><Left><Left>")
-
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar

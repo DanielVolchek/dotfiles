@@ -1,7 +1,13 @@
 -- vim.opt.list = true
 -- vim.opt.listchars:append("space:⋅")
 -- vim.opt.listchars:append("trail: ")
-require("indent_blankline").setup({
+
+local status, indent = pcall(require, "indent_blankline")
+if not status then
+	return
+end
+
+indent.setup({
 	-- char = "┆",
 	show_current_context = true,
 	filetype_exclude = {
