@@ -2,12 +2,13 @@ vim.g.mapleader = " "
 
 -- visual lines
 vim.keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Hide Search Highlights" })
-vim.keymap.set("n", "<leader>/", "<cmd>nohl<CR>", { desc = "Hide Search Highlights" })
 
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("n", "H", "b")
 vim.keymap.set("n", "J", "5j")
 vim.keymap.set("n", "K", "5k")
+vim.keymap.set("n", "L", "w")
 
 -- search word forward without moving
 vim.keymap.set("n", "(", function()
@@ -21,12 +22,6 @@ end)
 -- fix indentation
 vim.keymap.set("n", "==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
 vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
-
--- insert mode movement keymaps
-vim.keymap.set("i", "<C-h>", "<Left>")
-vim.keymap.set("i", "<C-j>", "<Down>")
-vim.keymap.set("i", "<C-k>", "<Up>")
-vim.keymap.set("i", "<C-l>", "<Right>")
 
 -- remap 0 to ^ (go to first character of text instead of first character of line)
 vim.keymap.set("n", "0", "^")
@@ -46,6 +41,13 @@ vim.keymap.set("n", "<leader>qb", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
 vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
 
+-- remap mb4 and mb5 to go up and down in jump list
+vim.keymap.set("n", "<X1Mouse>", "<C-O>")
+vim.keymap.set("n", "<X2Mouse>", "<C-I>")
+
+-- remap :"w to :w (common typo for me)
+vim.keymap.set("c", '"w', "w")
+
 -- open buffer in textedit so it is visually selectable in a way that registers for the system
 vim.keymap.set(
 	"v",
@@ -53,11 +55,6 @@ vim.keymap.set(
 	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
 	{ desc = "Open in textedit" }
 )
-
-vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
-vim.keymap.set("n", "/", "/\\v", { desc = "Search with very magic on" })
-vim.keymap.set("n", "\\\\", ":%s:\\v::g<Left><Left><Left>")
-vim.keymap.set("v", "\\\\", ":s:\\v::g<Left><Left><Left>")
 
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
