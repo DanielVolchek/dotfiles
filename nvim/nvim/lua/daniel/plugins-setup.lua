@@ -103,21 +103,21 @@ return packer.startup(function(use)
 	--tabout
 	use("abecodes/tabout.nvim")
 	-- dashboard
-	use({
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			_G.initDash = true
-			-- reset dash so we can reload it
-			package.loaded[config.plugindir .. "dashboard"] = nil
-			local db_status, db_ok = pcall(require, config.plugindir .. "dashboard")
-			if not db_status then
-				return
-			end
-		end,
-		requires = { "nvim-tree/nvim-web-devicons" },
-	})
-
+	-- use({
+	-- 	"glepnir/dashboard-nvim",
+	-- 	event = "VimEnter",
+	-- 	config = function()
+	-- 		_G.initDash = true
+	-- 		-- reset dash so we can reload it
+	-- 		package.loaded[config.plugindir .. "dashboard"] = nil
+	-- 		local db_status, db_ok = pcall(require, config.plugindir .. "dashboard")
+	-- 		if not db_status then
+	-- 			return
+	-- 		end
+	-- 	end,
+	-- 	requires = { "nvim-tree/nvim-web-devicons" },
+	-- })
+	--
 	-- sql browser
 	use("tpope/vim-dadbod")
 

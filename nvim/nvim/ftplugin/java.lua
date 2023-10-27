@@ -3,7 +3,7 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
 local workspace_dir = "/Users/danielvolchek/.javaworkspaces/" .. project_name
 
-local capabilities = require("cmp_nvim_lsp_status").default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local on_attach = require("daniel.plugins.lsp.lspconfig")
 
 local config = {
