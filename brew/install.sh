@@ -31,13 +31,13 @@ brew install jq # json parser
 brew install lazygit # git tui
 brew install glow # markdown viewer
 brew install bat # better cat
-brew install z # jump around directories
 brew install httpie # http client for terminal
 brew install ripgrep # live grep for neovim telescope
 #brew install spotify-tui # spotify tui
 #brew install spotifyd # spotify daemon
 brew install htop # show processes
 brew install fzf # fuzzy finder
+brew install zoxide # better cd command
 #brew install fontforge # custom nerd font patcher
 #brew install rust # rust lang
 
@@ -59,6 +59,7 @@ brew install --cask ticktick # todo list app
 brew install --cask google-drive # syncs files, at the end because it asks for password to install
 brew install --cask zoom # video conference software
 brew install --cask dash
+
 
 #cascadia code
 #oxygen mono

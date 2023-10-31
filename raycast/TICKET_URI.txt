@@ -1,1 +1,1 @@
-obsidian://open?vault=work_notes&file=clover%2FTickets%2FActive_Tickets%2FCSI-4519
+obsidian://open?vault=vault&file=Zettelkasten%2FNotes%2FCSI-5150
