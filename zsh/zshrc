@@ -43,7 +43,6 @@ fi
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(zoxide init zsh)"
-<<<<<<< HEAD
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /Users/danielvolchek/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/opt/homebrew/Cellar/mysql-client@5.7/5.7.42/bin:$PATH"
