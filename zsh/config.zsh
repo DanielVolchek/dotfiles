@@ -17,3 +17,5 @@ export PATH=$PATH:$HOME/bin
 
 # add path to config
 export XDG_CONFIG_HOME=$HOME/.config
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home"

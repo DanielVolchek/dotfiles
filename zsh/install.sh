@@ -32,16 +32,16 @@ done
 echo "linking zshrc"
 ln -sf $DIR/zshrc $HOME/.zshrc
 echo "linking essential dirs"
-echo "linking pl10k"
-ln -sf $DIR/powerlevel10k $HOME/powerlevel10k
-echo "linking ohmyzsh"
-ln -sf $DIR/oh-my-zsh $HOME/.oh-my-zsh
+# echo "linking pl10k"
+# ln -sf $DIR/powerlevel10k $HOME/powerlevel10k
+# echo "linking ohmyzsh"
+# ln -sf $DIR/oh-my-zsh $HOME/.oh-my-zsh
 
 # if zsh-autocompletion inside of $ZSH_CUSTOM already then skip
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-  echo "linking zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
+# if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+#   echo "linking zsh-autosuggestions"
+#   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# fi
 
 
 echo "Restart terminal or source $HOME/.zshrc to see changes"
