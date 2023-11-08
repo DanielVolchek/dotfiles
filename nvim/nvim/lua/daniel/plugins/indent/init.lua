@@ -7,7 +7,12 @@ if not status then
 	return
 end
 
-indent.setup()
+indent.setup({
+	scope = {
+		show_start = false,
+		show_end = false,
+	},
+})
 
 -- vim.opt.termguicolors = true
 -- vim.cmd([[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]])
