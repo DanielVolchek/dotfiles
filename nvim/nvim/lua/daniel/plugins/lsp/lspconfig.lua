@@ -226,10 +226,20 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
--- local omni_path = "/Users/danielvolchek/.local/share/nvim/mason/bin/omnisharp-mono"
-
 lspconfig["omnisharp"].setup({
-	cmd = { "omnisharp_mono", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+	cmd = {
+		"omnisharp-mono",
+		"--languageserver",
+		"--hostPID",
+		tostring(vim.fn.getpid()),
+	},
+
+	handlers = {
+		["textDocument/definition"] = require("omnisharp_extended").handler,
+	},
+
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- configure bash server

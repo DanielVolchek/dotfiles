@@ -25,6 +25,7 @@ null_ls.setup({
 		formatting.rustfmt, -- rust formatter
 		formatting.goimports, -- go formatter that also auto updates imports
 		formatting.google_java_format,
+		formatting.csharpier, -- c sharp formatter
 		-- eslint_d was causing some issues but leaving it here to look back later
 		-- eslint-lsp from mason seems to work just fine
 		-- diagnostics.eslint_d, -- js/ts linter
