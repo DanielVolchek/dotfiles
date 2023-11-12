@@ -2,16 +2,15 @@
 -- vim.opt.listchars:append("space:⋅")
 -- vim.opt.listchars:append("trail: ")
 
-local status, indent = pcall(require, "indent_blankline")
+local status, indent = pcall(require, "ibl")
 if not status then
 	return
 end
 
 indent.setup({
-	-- char = "┆",
-	show_current_context = true,
-	filetype_exclude = {
-		"dashboard",
+	scope = {
+		show_start = false,
+		show_end = false,
 	},
 })
 
