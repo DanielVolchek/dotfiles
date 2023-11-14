@@ -11,21 +11,10 @@ vim.g.loaded_netrwPlugin = 1
 _G.config = {}
 
 -- setup
-require("daniel.plugins-setup")
-
---load core
-require("daniel.core")
-
---load config
 require("daniel.config")
+require("daniel.core")
+require("daniel.lazy-setup")
 
-config.getRoot()
-
--- load plugins
-config.sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
-
--- config.loadmaps(config.maps)
-
--- disable comment continuation
+-- disable comment continuation when entering newline
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

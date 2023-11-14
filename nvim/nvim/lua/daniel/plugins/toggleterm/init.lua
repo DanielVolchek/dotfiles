@@ -4,6 +4,11 @@ require(plugindir .. "keymaps")
 
 return {
 	"akinsho/toggleterm.nvim",
+  
+  keys = {
+
+  }
+
 	opts = {
 		size = 5,
 		open_mapping = [[<F7>]],
