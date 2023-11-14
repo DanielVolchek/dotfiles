@@ -58,7 +58,7 @@ require("lazy").setup({
 	"vim-scripts/ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 	"tpope/vim-repeat", -- repeat plugin command with .
 	"tpope/vim-surround", -- add, delete, change surroundings (it's awesome)
-	"ThePrimeagen/harpoon", -- bookmarks
+	, -- bookmarks
 	"szw/vim-maximizer", -- Maximize split with keypress
 	-- colorschemes
 	"ellisonleao/gruvbox.nvim",

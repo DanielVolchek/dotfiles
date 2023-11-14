@@ -1,3 +1,7 @@
-local plugindir = config.plugindir .. "ccc."
-require(plugindir .. "ccc")
-vim.keymap.set("n", "<leader>cp", "<cmd>CccPick<CR>", { desc = "Color Picker" })
+return {
+	"uga-rosa/ccc.nvim",
+	lazy = false,
+	keys = {
+		{ "<leader>cp", "<cmd>CccPick<CR>", desc = "Color Picker" },
+	},
+}

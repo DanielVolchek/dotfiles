@@ -1,14 +1,19 @@
-local status, marks = pcall(require, "marks")
-if not status then
-	return
-end
-
-marks.setup({
-	mappings = {
-		preview = "m;",
-		set_next = "mm",
-		next = "m.",
-		prev = "m,",
-		delete_line = "dmm",
+return {
+	"chentoast/marks.nvim",
+	keys = {
+		"m;",
+		"mm",
+		"m.",
+		"m,",
+		"dmm",
 	},
-})
+	opts = {
+		mappings = {
+			preview = "m;",
+			set_next = "mm",
+			next = "m.",
+			prev = "m,",
+			delete_line = "dmm",
+		},
+	},
+}

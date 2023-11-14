@@ -1,2 +1,6 @@
-local plugindir = config.plugindir .. "tabout."
-require(plugindir .. "tabout")
+return {
+	"abecodes/tabout.nvim",
+	config = function()
+		require("tabout").setup({})
+	end,
+}
