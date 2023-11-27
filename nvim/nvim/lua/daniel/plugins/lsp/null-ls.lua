@@ -21,14 +21,13 @@ null_ls.setup({
 		-- formatting.eslint_d, -- js/ts linter
 		-- formatting.prettier, -- js/ts formatter
 		formatting.eslint, -- js/ts linter
+		formatting.eslint_d, -- js/ts linter
 		formatting.stylua, -- lua formatter
 		formatting.rustfmt, -- rust formatter
 		formatting.goimports, -- go formatter that also auto updates imports
 		formatting.google_java_format,
 		-- eslint_d was causing some issues but leaving it here to look back later
 		-- eslint-lsp from mason seems to work just fine
-		-- diagnostics.eslint_d, -- js/ts linter
-		-- diagnostics.eslint, -- js/ts linter
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

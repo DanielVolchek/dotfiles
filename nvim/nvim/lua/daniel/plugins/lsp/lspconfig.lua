@@ -49,6 +49,37 @@ local sig_opts = {
 	noice = true,
 }
 
+-- TODO move out
+-- filter out extra definition in react
+local function filter(arr, fn)
+	if type(arr) ~= "table" then
+		return arr
+	end
+
+	local filtered = {}
+	for k, v in pairs(arr) do
+		if fn(v, k, arr) then
+			table.insert(filtered, v)
+		end
+	end
+
+	return filtered
+end
+
+local function filterReactDTS(value)
+	return string.match(value.filename, "react/index.d.ts") == nil
+end
+
+local function on_list(options)
+	local items = options.items
+	if #items > 1 then
+		items = filter(items, filterReactDTS)
+	end
+
+	vim.fn.setqflist({}, " ", { title = options.title, items = items, context = options.context })
+	vim.api.nvim_command("cfirst") -- or maybe you want 'copen' instead of 'cfirst'
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -65,8 +96,13 @@ local on_attach = function(client, bufnr)
 	-- set keybinds
 	keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
 	keymap.set("n", "<leader>gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
-	keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
-	keymap.set("n", "<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
+	keymap.set("n", "gD", function()
+		vim.lsp.buf.definition({ on_list = on_list })
+	end, opts) -- got to declaration
+	keymap.set("n", "<leader>gD", function()
+		vim.lsp.buf.definition({ on_list = on_list })
+	end, opts) -- got to declaration
+	keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- got to declaration
 	keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 	keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
 	keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
