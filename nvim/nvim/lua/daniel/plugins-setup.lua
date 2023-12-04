@@ -183,7 +183,7 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
 	use("folke/trouble.nvim") -- lsp diagnostics"
-	use("mfussenegger/nvim-jdtls") -- java language server support
+	use("mfussenegger/nvim-jdtls") -- java language server support,
 	use("Hoffs/omnisharp-extended-lsp.nvim")
 
 	use("nvim-lua/lsp-status.nvim")

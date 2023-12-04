@@ -1,6 +1,3 @@
-local plugindir = config.plugindir .. "treesitter."
-require(plugindir .. "treesitter")
-
 return {
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",

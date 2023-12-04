@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	priority = 500,
+	priority = 1000,
 	lazy = false,
 	config = function()
 		local ok, lualine = pcall(require, "lualine")
