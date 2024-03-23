@@ -1,12 +1,8 @@
-local plugindir = config.plugindir .. "toggleterm."
-require(plugindir .. "toggleterm")
-require(plugindir .. "keymaps")
-
 return {
 	"akinsho/toggleterm.nvim",
 
 	-- keys = {},
-	event = "BufferEnter",
+	event = "BufEnter",
 
 	opts = {
 		size = 5,

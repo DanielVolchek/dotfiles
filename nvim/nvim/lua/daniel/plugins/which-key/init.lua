@@ -1,6 +1,3 @@
-local plugindir = config.plugindir .. "which-key."
-require(plugindir .. "which-key")
-
 return {
 	"folke/which-key.nvim",
 	opts = {

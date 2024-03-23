@@ -1,6 +1,3 @@
-local plugindir = config.plugindir .. "nvim-cmp."
-require(plugindir .. "nvim-cmp")
-
 return {
 	-- import nvim-cmp plugin safely
 	"hrsh7th/cmp-buffer",
@@ -26,10 +23,10 @@ return {
 				return
 			end
 
-			local cmpdict_status, cmp_dict = pcall(require, "cmp_dictionary")
-			if not cmpdict_status then
-				return
-			end
+			-- local cmpdict_status, cmp_dict = pcall(require, "cmp_dictionary")
+			-- if not cmpdict_status then
+			-- 	return
+			-- end
 
 			-- load vs-code like snippets from plugins (e.g. friendly-snippets)
 			require("luasnip/loaders/from_vscode").lazy_load()
@@ -86,10 +83,10 @@ return {
 					{ name = "nvim_lsp" }, -- lsp
 					{ name = "luasnip" }, -- snippets
 					{ name = "buffer" }, -- text within current buffer
-					{
-						name = "dictionary",
-						keyword_length = 2,
-					},
+					-- {
+					-- 	name = "dictionary",
+					-- 	keyword_length = 2,
+					-- },
 					{ name = "path" }, -- file system paths
 				}),
 				-- configure lspkind for vs-code like icon
@@ -101,12 +98,12 @@ return {
 				},
 			})
 
-			cmp_dict.setup({})
-			cmp_dict.switcher({
-				spelllang = {
-					en = "~/dotfiles/en.dict",
-				},
-			})
+			-- cmp_dict.setup({})
+			-- cmp_dict.switcher({
+			-- 	spelllang = {
+			-- 		en = "~/dotfiles/en.dict",
+			-- 	},
+			-- })
 		end,
 		dependencies = {
 			"hrsh7th/cmp-buffer",

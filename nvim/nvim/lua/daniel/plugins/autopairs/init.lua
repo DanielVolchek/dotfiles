@@ -1,6 +1,3 @@
-local plugindir = config.plugindir .. "autopairs."
-require(plugindir .. "autopairs")
-
 return {
 	"windwp/nvim-autopairs",
 	opts = {
