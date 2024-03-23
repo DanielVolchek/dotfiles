@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/neodev.nvim",
-		event = "BufEnter *.lua",
+		ft = { "lua" },
 		config = function()
 			require("neodev").setup({})
 		end,
@@ -222,22 +222,6 @@ return {
 						},
 					},
 				},
-			})
-
-			lspconfig["omnisharp"].setup({
-				cmd = {
-					"omnisharp-mono",
-					"--languageserver",
-					"--hostPID",
-					tostring(vim.fn.getpid()),
-				},
-
-				handlers = {
-					["textDocument/definition"] = require("omnisharp_extended").handler,
-				},
-
-				capabilities = capabilities,
-				on_attach = on_attach,
 			})
 
 			-- configure bash server

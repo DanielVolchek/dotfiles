@@ -8,8 +8,6 @@ local sourcedir = function(dir)
 
 	local plugins = {}
 
-	print("In sourcedir")
-
 	for _, file in ipairs(files) do
 		config.log("sourcing file " .. file)
 
@@ -22,7 +20,7 @@ local sourcedir = function(dir)
 					table.insert(plugins, plugin)
 				end
 			else
-				vim.notify("Failed to load plugin " .. file .. plugin)
+				vim.notify("Failed to load plugin " .. file)
 				config.log("Error: " .. plugin)
 			end
 		end
@@ -34,11 +32,5 @@ end
 -- LazyVim setup file
 -- Load all plugins
 local plugins = sourcedir(vim.fn.stdpath("config") .. "/lua/daniel/plugins")
-
-for i, pl in ipairs(plugins) do
-	if pl == true then
-		P("pl is true")
-	end
-end
 
 return plugins

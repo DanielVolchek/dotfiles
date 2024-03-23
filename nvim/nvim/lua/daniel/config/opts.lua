@@ -1,4 +1,4 @@
-config.debug = true
+config.debug = false
 config.plugindir = "daniel.plugins."
 config.user_terminals = {}
 config.maps = { i = {}, n = {}, v = {}, x = {}, t = {} }

@@ -1,10 +1,8 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
-		config = function()
-			require("mason").setup({})
-		end,
+		config = true,
+		priority = 100,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -21,10 +19,12 @@ return {
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
+			priority = 100,
 		},
 	},
 	{
 		"jayp0521/mason-null-ls.nvim",
+		event = "LspAttach",
 		opts = {
 			ensure_installed = {
 				"prettier", -- ts/js formatter

@@ -24,7 +24,7 @@ return {
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 
-		vim.keymap.ste("n", "<leader>hh", function()
+		vim.keymap.set("n", "<leader>hh", function()
 			harpoon:list():select(1)
 		end)
 

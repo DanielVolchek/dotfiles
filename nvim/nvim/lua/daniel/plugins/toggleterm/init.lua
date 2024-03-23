@@ -18,7 +18,9 @@ return {
 		},
 	},
 
-	config = function()
+	config = function(_, opts)
+		require("toggleterm").setup(opts)
+
 		-- toggleterm
 		function config.toggle_term_cmd(term_details)
 			vim.notify("termdetails is " .. term_details)
