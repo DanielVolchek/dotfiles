@@ -21,7 +21,7 @@ null_ls.setup({
 		-- formatting.eslint_d, -- js/ts linter
 		-- formatting.prettier, -- js/ts formatter
 		formatting.eslint, -- js/ts linter
-		formatting.eslint_d, -- js/ts linter
+		-- formatting.eslint_d, -- js/ts linter
 		formatting.stylua, -- lua formatter
 		formatting.rustfmt, -- rust formatter
 		formatting.goimports, -- go formatter that also auto updates imports

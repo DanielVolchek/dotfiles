@@ -23,21 +23,31 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
+" Move around file tree with vim binds
 Plug 'preservim/nerdtree`
 
+" Keybinds for overwriting quicker
+Plug 'vim-scripts/ReplaceWithRegister'
+
+" Surround commands
+Plug 'tpope/vim-surround'
+
+
 set number
+set relativenumber
 set hlsearch                      " highlight search occurrences
 set ignorecase                    " ignore case in search patterns
 set smartcase                     " no ignore case when pattern is uppercase
 set incsearch                     " show search results while typing
 set wrapscan                      " searches wrap around the end of the file
 set NERDTree
+set sneak
 
 let mapleader = " "
 
 map <leader>nt :NERDTreeToggle<CR>
 map <leader>nh :nohlsearch<CR>
-map <leader>ff <Action>(SearchEverywhere)
+map <leader>ff <Action>(GoToFile)
 map <leader>fo <Action>(RecentFiles)
 map <leader>fs <Action>(ReplaceInPath)
 map <leader>lg <Action>(ChooseRunConfiguration)
@@ -51,3 +61,14 @@ map <leader>lg <Action>(ChooseRunConfiguration)
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
+
+" Mostly LSP stuff
+map <leader>rn <Action>(RenameElement)
+map gf <Action>(FindUsages)
+map <leader>gf <Action>(FindUsages)
+map <leader>gD <Action>(GotoImplementation)
+map gD <Action>(GotoImplementation)
+map <leader>k <Action>(QuickJavaDoc)
+
+map <leader>tt <Action>(ActivateTerminalToolWindow)
+map <leader>ca <Action>(ShowIntentionActions)

@@ -177,7 +177,7 @@ lspconfig["eslint"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-	cmd = { "eslint_d", "--stdio" },
+	cmd = { "eslint", "--stdin" },
 })
 
 -- configure html server

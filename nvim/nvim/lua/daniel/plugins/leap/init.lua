@@ -4,5 +4,6 @@ if not status then
 end
 -- leap.add_default_mappings()
 vim.keymap.set("n", "s", function()
+	vim.cmd("normal m'")
 	leap.leap({ target_windows = { vim.fn.win_getid() } })
 end)
