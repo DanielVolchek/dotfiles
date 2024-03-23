@@ -14,11 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-print("Loading in lazy setup")
-
 local plugins = require("daniel.plugins")
-require("lazy").setup(plugins, {
-	defaults = {
-		lazy = true,
-	},
-})
+require("lazy").setup(plugins)
+
+-- require("lazy").setup(plugins, {
+-- 	defaults = {
+-- 		lazy = true,
+-- 	},
+-- })
