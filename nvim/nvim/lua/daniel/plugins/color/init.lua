@@ -19,8 +19,8 @@ return {
 
 	-- nvim-web-devicon
 	{
-		"kyazdani42/nvim-web-devicons",
-		event = "BufEnter",
+		"nvim-tree/nvim-web-devicons",
+		event = "VimEnter",
 		config = function()
 			local icons = require("nvim-web-devicons")
 			icons.setup({

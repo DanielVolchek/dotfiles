@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	use("simrat39/symbols-outline.nvim")
 
 	--tab bar
-	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+	use({ "romgrk/barbar.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 
 	-- maximizes and restores current window
 	use("szw/vim-maximizer")
