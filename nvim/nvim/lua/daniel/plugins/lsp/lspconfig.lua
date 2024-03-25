@@ -6,7 +6,10 @@ return {
 			require("neodev").setup({})
 		end,
 	},
-	"jose-elias-alvarez/typescript.nvim",
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	},
 	"hrsh7th/cmp-nvim-lsp",
 	"folke/which-key.nvim",
 	"nvim-lua/lsp-status.nvim",
@@ -40,7 +43,7 @@ return {
 			lsp_status.register_progress()
 
 			-- import typescript plugin safely
-			local typescript_status, typescript = pcall(require, "typescript")
+			local typescript_status, typescript = pcall(require, "typescript-tools")
 			if not typescript_status then
 				vim.notify("typescript plugin is not installed", vim.log.levels.ERROR)
 				return
@@ -129,10 +132,8 @@ return {
 
 			-- configure typescript server with plugin
 			typescript.setup({
-				server = {
-					capabilities = capabilities,
-					on_attach = on_attach,
-				},
+				capabilities = capabilities,
+				on_attach = on_attach,
 			})
 
 			lspconfig["eslint"].setup({
