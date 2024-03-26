@@ -1,12 +1,18 @@
 return {
 	"nvimtools/none-ls.nvim",
 	event = "LspAttach",
-	dependencies = { "williamboman/mason.nvim", "jayp0521/mason-null-ls.nvim" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"jayp0521/mason-null-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
+	},
 	config = function()
 		local setup, null_ls = pcall(require, "null-ls")
 		if not setup then
 			return
 		end
+
+		local eslint_d = require("none-ls.formatting.eslint_d")
 
 		-- for conciseness
 		local formatting = null_ls.builtins.formatting -- to setup formatters
@@ -24,7 +30,7 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				-- formatting.eslint_d, -- js/ts linter
 				-- formatting.prettier, -- js/ts formatter
-				-- formatting.eslint, -- js/ts linter
+				eslint_d, -- js/ts linter
 				formatting.stylua, -- lua formatter
 				-- formatting.rustfmt, -- rust formatter
 				formatting.goimports, -- go formatter that also auto updates imports

@@ -145,9 +145,10 @@ return {
 					},
 				}
 				-- typescript specific keymaps (e.g. rename file and update imports)
-				if client.name == "tsserver" then
-					keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-					keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+				if client.name == "typescript-tools" then
+					keymap.set("n", "<leader>rf", "<cmd>TSToolsRenameFile<CR>") -- rename file and update imports
+					keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+					keymap.set("n", "<leader>oi", "<cmd>TSToolsOrganizeImports<CR>") -- remove unused variables (not in youtube nvim video)
 					table.insert(mappings["<leader>"], {
 						r = {
 							name = "TS Refactor",
