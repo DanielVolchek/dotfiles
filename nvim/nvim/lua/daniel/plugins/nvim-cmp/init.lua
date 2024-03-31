@@ -99,12 +99,22 @@ return {
 				-- sources for autocompletion
 				sources = cmp.config.sources({
 					-- { name = "copilot" },
-					{ name = "nvim_lsp" }, -- lsp
-					{ name = "luasnip" }, -- snippets
-					{ name = "buffer" }, -- text within current buffer
+					{
+						name = "nvim_lsp",
+						priority = 10,
+					}, -- lsp
+					{
+						name = "luasnip",
+						priority = 0,
+					}, -- snippets
+					{
+						name = "buffer",
+						priority = 0,
+					}, -- text within current buffer
 					{
 						name = "dictionary",
-						keyword_length = 2,
+						keyword_length = 4,
+						priority = 0,
 					},
 					{ name = "path" }, -- file system paths
 				}),
@@ -114,6 +124,9 @@ return {
 						maxwidth = 50,
 						ellipsis_char = "...",
 					}),
+				},
+				sorting = {
+					priority_weight = 2,
 				},
 			})
 		end,

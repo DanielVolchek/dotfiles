@@ -44,6 +44,7 @@ return {
 
 			-- import typescript plugin safely
 			local typescript_status, typescript = pcall(require, "typescript-tools")
+
 			if not typescript_status then
 				vim.notify("typescript plugin is not installed", vim.log.levels.ERROR)
 				return
@@ -106,12 +107,8 @@ return {
 				keymap.set("n", "gD", function()
 					vim.lsp.buf.definition({ on_list = on_list })
 				end, opts) -- got to declaration
-				keymap.set("n", "<leader>gd", function()
-					vim.lsp.buf.definition({ on_list = on_list })
-				end, opts) -- got to declaration
-				keymap.set("n", "gd", function()
-					vim.lsp.buf.definition({ on_list = on_list })
-				end, opts) -- got to declaration
+				keymap.set("n", "<leader>gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts) -- got to declaration
+				keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 				keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
 				keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 				keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
