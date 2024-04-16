@@ -4,5 +4,12 @@ return {
 	-- "MunifTanjim/nui.nvim", -- required UI Lib for noice
 	"szw/vim-maximizer",
 	"tpope/vim-repeat", -- repeat plugin command with .
-	"f-person/git-blame.nvim",
+	{
+		"f-person/git-blame.nvim",
+		lazy = false,
+	},
+	{
+		"ThePrimeagen/vim-be-good",
+		lazy = false,
+	},
 }

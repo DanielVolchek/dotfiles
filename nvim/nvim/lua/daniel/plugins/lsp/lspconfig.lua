@@ -146,6 +146,7 @@ return {
 					keymap.set("n", "<leader>rf", "<cmd>TSToolsRenameFile<CR>") -- rename file and update imports
 					keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
 					keymap.set("n", "<leader>oi", "<cmd>TSToolsOrganizeImports<CR>") -- remove unused variables (not in youtube nvim video)
+					keymap.set("n", "<leader>mi", "<cmd>TSToolsAddMissingImports<CR>") -- remove unused variables (not in youtube nvim video)
 					table.insert(mappings["<leader>"], {
 						r = {
 							name = "TS Refactor",

@@ -13,6 +13,16 @@ return {
 		priority = 1000,
 
 		config = function()
+			require("nightfox").setup({
+				specs = {
+					all = {
+						syntax = {
+							operator = "yellow",
+						},
+					},
+				},
+			})
+
 			vim.cmd("colorscheme carbonfox")
 		end,
 	},
