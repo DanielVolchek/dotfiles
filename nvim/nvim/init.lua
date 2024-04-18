@@ -16,5 +16,5 @@ require("daniel.core")
 require("daniel.lazy-setup")
 
 -- disable comment continuation when entering newline
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+-- vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+-- vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
