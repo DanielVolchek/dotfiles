@@ -4,7 +4,6 @@
 -- look into treesitter function surround
 
 -- eagerly disable netrw for nvim-tree
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 

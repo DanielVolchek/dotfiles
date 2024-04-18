@@ -6,6 +6,7 @@ return {
 		{
 			"nvim-telescope/telescope.nvim",
 			branch = "0.1.x",
+
 			keys = {
 				{ "<leader>ft", "<cmd>Telescope <cr>", desc = "List All Available Telescope Commands" },
 				{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Fuzzy Find Files in CWD" },
