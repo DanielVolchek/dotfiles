@@ -23,13 +23,6 @@ return {
 				vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
 			end
 
-lspconfig["eslint"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-	cmd = { "eslint", "--stdin" },
-})
-
 			-- import cmp-nvim-lsp plugin safely
 			local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 			if not cmp_nvim_lsp_status then
