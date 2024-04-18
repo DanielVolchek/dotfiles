@@ -42,3 +42,15 @@ opt.cmdheight = 1
 opt.undofile = true
 
 -- opt.cmdheight = 0
+
+-- Set HAR filetype
+vim.api.nvim_exec(
+	[[
+  autocmd BufNewFile,BufRead *.har set filetype=har
+]],
+	false
+)
+
+-- disable comment continuation
+-- vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+-- vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

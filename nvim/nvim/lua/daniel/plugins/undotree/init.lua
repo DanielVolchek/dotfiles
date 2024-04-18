@@ -1,1 +1,6 @@
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { noremap = true, desc = "Open UndoTree" })
+return {
+	"mbbill/undotree",
+	keys = {
+		{ "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Open UndoTree" },
+	},
+}

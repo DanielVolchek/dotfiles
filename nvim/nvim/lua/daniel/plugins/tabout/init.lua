@@ -1,2 +1,4 @@
-local plugindir = config.plugindir .. "tabout."
-require(plugindir .. "tabout")
+return {
+	"abecodes/tabout.nvim",
+	config = true,
+}

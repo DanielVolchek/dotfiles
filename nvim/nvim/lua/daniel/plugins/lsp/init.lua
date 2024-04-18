@@ -1,7 +1,13 @@
 local plugindir = config.plugindir .. "lsp."
 
-require(plugindir .. "mason")
-require(plugindir .. "null-ls")
-require(plugindir .. "lspconfig")
-require(plugindir .. "lspsaga")
-require(plugindir .. "neodev")
+local mason = require(plugindir .. "mason")
+local null = require(plugindir .. "null-ls")
+local conf = require(plugindir .. "lspconfig")
+local saga = require(plugindir .. "lspsaga")
+
+return {
+	mason,
+	null,
+	conf,
+	saga,
+}

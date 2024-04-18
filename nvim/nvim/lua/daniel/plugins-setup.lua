@@ -32,23 +32,6 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-	use("MunifTanjim/nui.nvim") -- required UI Lib for noice
-
-	-- notify api
-	use("rcarriga/nvim-notify")
-
-	-- route error messages to notify
-	use({
-		"folke/noice.nvim",
-		requires = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
-		},
-	})
 
 	-- undo tree
 	use("mbbill/undotree")
@@ -68,7 +51,7 @@ return packer.startup(function(use)
 	use("simrat39/symbols-outline.nvim")
 
 	--tab bar
-	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+	use({ "romgrk/barbar.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 
 	-- maximizes and restores current window
 	use("szw/vim-maximizer")
@@ -118,9 +101,6 @@ return packer.startup(function(use)
 	-- 	requires = { "nvim-tree/nvim-web-devicons" },
 	-- })
 	--
-	-- sql browser
-	use("tpope/vim-dadbod")
-
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
@@ -183,9 +163,6 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 	use("ray-x/lsp_signature.nvim") -- lsp signatures
 	use("folke/trouble.nvim") -- lsp diagnostics"
-	use("mfussenegger/nvim-jdtls") -- java language server support
-	use("Hoffs/omnisharp-extended-lsp.nvim")
-
 	use("nvim-lua/lsp-status.nvim")
 	-- formatting & linting
 	use("nvimtools/none-ls.nvim") -- configure formatters & linters

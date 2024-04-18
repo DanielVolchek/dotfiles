@@ -17,20 +17,20 @@
 -- end, { desc = "Open Mini File Explorer in CWD" })
 --
 
-local aistatus, ai = pcall(require, "mini.ai")
-if not aistatus then
-	print("mini.ai not found")
-	return
-end
-
-local aisetup = {
-	custom_textobjects = {
-		-- Select in function using treesitter
-		F = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
-	},
-}
-
-ai.setup(aisetup)
+-- local aistatus, ai = pcall(require, "mini.ai")
+-- if not aistatus then
+-- 	print("mini.ai not found")
+-- 	return
+-- end
+--
+-- local aisetup = {
+-- 	custom_textobjects = {
+-- 		-- Select in function using treesitter
+-- 		F = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+-- 	},
+-- }
+--
+-- ai.setup(aisetup)
 --
 -- local animate_status, animate = pcall(require, "mini.animate")
 -- if not animate_status then

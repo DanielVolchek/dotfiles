@@ -1,2 +1,1 @@
-local plugindir = config.plugindir .. "gitsigns."
-require(plugindir .. "gitsigns")
+return "lewis6991/gitsigns.nvim"
