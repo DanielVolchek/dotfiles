@@ -17,3 +17,5 @@ config.bonsai = {
 }
 
 config.obsidianDir = "~/obsidian-vault/"
+
+config.firenvim = vim.g.started_by_firenvim

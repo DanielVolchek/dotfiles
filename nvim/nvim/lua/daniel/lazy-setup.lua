@@ -16,9 +16,3 @@ vim.g.mapleader = " "
 
 local plugins = require("daniel.plugins")
 require("lazy").setup(plugins)
-
--- require("lazy").setup(plugins, {
--- 	defaults = {
--- 		lazy = true,
--- 	},
--- })

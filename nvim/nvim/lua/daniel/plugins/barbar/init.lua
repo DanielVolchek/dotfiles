@@ -1,6 +1,7 @@
 return {
 	"romgrk/barbar.nvim",
 	lazy = false,
+	enabled = not config.firenvim,
 	config = function()
 		local nvim_tree_events = require("nvim-tree.events")
 		local bufferline_api = require("bufferline.api")
@@ -81,5 +82,7 @@ return {
 		end, { desc = "Force close Buffer" })
 		vim.keymap.set("n", "<C-w><C-l>", "<cmd>BufferNext<cr>", { desc = "Go to next buffer" })
 		vim.keymap.set("n", "<C-w><C-h>", "<cmd>BufferPrevious<cr>", { desc = "Go to previous buffer" })
+
+		vim.keymap.set("n", "<leader>bp", "<cmd>BufferPick<CR>", { desc = "Magic Buffer Picker" })
 	end,
 }

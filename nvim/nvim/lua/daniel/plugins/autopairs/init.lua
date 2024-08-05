@@ -1,5 +1,10 @@
 return {
-	{ "windwp/nvim-ts-autotag", dependencies = { "nvim-treesitter" } },
+	{
+		"windwp/nvim-ts-autotag",
+		config = true,
+		lazy = false,
+		dependencies = { "nvim-treesitter" },
+	},
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",

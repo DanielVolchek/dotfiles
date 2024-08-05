@@ -18,6 +18,12 @@ return {
 		event = "BufEnter",
 		config = function()
 			-- import lspconfig plugin safely
+
+			local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+			if not lspconfig_status then
+				vim.notify("lspconfig not installed", vim.log.levels.ERROR)
+			end
+
 			local whichkey_status, which_key = pcall(require, "which-key")
 			if not whichkey_status then
 				vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
