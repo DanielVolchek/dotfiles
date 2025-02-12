@@ -6,6 +6,7 @@ config.transparent = false
 config.configdir = "~/.config/nvim/"
 config.rootMaxDepth = 5
 config.rootSearch = true
+config.floatFileTree = true
 
 config.bonsai = {
 	infinite = true,

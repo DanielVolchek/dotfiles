@@ -75,7 +75,7 @@ return {
 		function _G.set_terminal_keymaps()
 			local term_opts = { buffer = 0 }
 			-- vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], term_opts)
-			vim.keymap.set("t", "JK", [[<C-\><C-n>]], term_opts)
+			-- vim.keymap.set("t", "JK", [[<C-\><C-n>]], term_opts)
 			vim.keymap.set("t", "", [[<C-\><C-n><C-w>]], term_opts)
 		end
 

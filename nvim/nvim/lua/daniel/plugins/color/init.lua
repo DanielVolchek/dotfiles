@@ -26,6 +26,11 @@ return {
 			vim.cmd("colorscheme carbonfox")
 		end,
 	},
+	{ "catppuccin/nvim", name = "catppuccin", lazy = false },
+	{
+		"slugbyte/lackluster.nvim",
+		lazy = false,
+	},
 
 	-- nvim-web-devicon
 	{

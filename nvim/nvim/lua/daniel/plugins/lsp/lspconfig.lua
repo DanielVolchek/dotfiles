@@ -11,7 +11,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	},
 	"hrsh7th/cmp-nvim-lsp",
-	"folke/which-key.nvim",
+	-- "folke/which-key.nvim",
 	"nvim-lua/lsp-status.nvim",
 	{
 		"neovim/nvim-lspconfig",
@@ -24,10 +24,10 @@ return {
 				vim.notify("lspconfig not installed", vim.log.levels.ERROR)
 			end
 
-			local whichkey_status, which_key = pcall(require, "which-key")
-			if not whichkey_status then
-				vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
-			end
+			-- local whichkey_status, which_key = pcall(require, "which-key")
+			-- if not whichkey_status then
+			-- 	vim.notify("which-key plugin is not installed", vim.log.levels.ERROR)
+			-- end
 
 			-- import cmp-nvim-lsp plugin safely
 			local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -125,40 +125,35 @@ return {
 
 				--register new mappings in lsp
 				local mappings = {
-					["<leader>"] = {
-						["rn"] = "Smart Rename",
-						d = {
-							name = "Diagnostics",
-							d = "Show diagnostics",
-						},
-						k = "Show Documentation",
-					},
-					g = {
-						name = "Go to",
-						f = "Find Defs/Refs",
-						d = "Open Definiton Popup",
-						D = "Open Definiton Buffer",
-						i = "Open Implementation Buffer",
-					},
+					{ "<leader>d", group = "Diagnostics" },
+					{ "<leader>dd", desc = "Show diagnostics" },
+					{ "<leader>k", desc = "Show Documentation" },
+					{ "<leader>rn", desc = "Smart Rename" },
+					{ "g", group = "Go to" },
+					{ "gD", desc = "Open Definiton Buffer" },
+					{ "gd", desc = "Open Definiton Popup" },
+					{ "gf", desc = "Find Defs/Refs" },
+					{ "gi", desc = "Open Implementation Buffer" },
 				}
 				-- typescript specific keymaps (e.g. rename file and update imports)
 				if client.name == "typescript-tools" then
 					keymap.set("n", "<leader>rf", "<cmd>TSToolsRenameFile<CR>") -- rename file and update imports
 					keymap.set("n", "<leader>ru", "<cmd>TSToolsRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+					keymap.set("n", "<leader>ri", "<cmd>TSToolsRemoveUnusedImports<CR>") -- remove unused variables (not in youtube nvim video)
 					keymap.set("n", "<leader>oi", "<cmd>TSToolsOrganizeImports<CR>") -- remove unused variables (not in youtube nvim video)
 					keymap.set("n", "<leader>mi", "<cmd>TSToolsAddMissingImports<CR>") -- remove unused variables (not in youtube nvim video)
-					table.insert(mappings["<leader>"], {
-						r = {
-							name = "TS Refactor",
-							f = "Rename File",
-							u = "Remove Unused",
-						},
-					})
+					-- 	table.insert(mappings["<leader>"], {
+					-- 		r = {
+					-- 			name = "TS Refactor",
+					-- 			f = "Rename File",
+					-- 			u = "Remove Unused",
+					-- 		},
+					-- 	})
 				end
 
-				if whichkey_status then
-					which_key.register(mappings, { prefix = "" })
-				end
+				-- if whichkey_status then
+				-- 	which_key.register(mappings, { prefix = "" })
+				-- end
 			end
 
 			-- used to enable autocompletion (assign to every lsp server config)
@@ -178,12 +173,12 @@ return {
 				on_attach = on_attach,
 			})
 
-			lspconfig["eslint"].setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-				cmd = { "eslint_d", "--stdio" },
-			})
+			-- lspconfig["eslint"].setup({
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+			-- 	cmd = { "eslint_d", "--stdio" },
+			-- })
 
 			-- configure html server
 			lspconfig["html"].setup({

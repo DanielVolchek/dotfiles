@@ -1,6 +1,6 @@
 alias .="source"
 alias cheat="cht.sh"
-alias ll="la"
+alias ll="ls -la"
 alias config="cd ~/dotfiles"
 alias lg="lazygit"
 alias notes="vim ~/obsidian-vault/ +'silent cd %:p:h' +'silent SessionLoad'"

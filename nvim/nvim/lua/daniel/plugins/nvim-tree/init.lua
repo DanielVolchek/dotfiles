@@ -47,7 +47,7 @@ local opts = {
 	view = {
 		-- adaptive_size = true,
 		float = {
-			enable = true,
+			enable = _G.config.floatFileTree,
 			open_win_config = {
 				relative = "editor",
 				border = "rounded",
@@ -71,8 +71,11 @@ local opts = {
 		-- 	},
 		-- },
 	},
-
+	filters = {
+		git_ignored = false,
+	},
 	renderer = {
+		indent_width = 1,
 		icons = {
 			glyphs = {
 				git = {},

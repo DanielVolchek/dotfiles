@@ -6,6 +6,7 @@ return {
 		{
 			"nvim-telescope/telescope.nvim",
 			branch = "0.1.x",
+			event = "VeryLazy",
 
 			keys = {
 				{ "<leader>ft", "<cmd>Telescope <cr>", desc = "List All Available Telescope Commands" },

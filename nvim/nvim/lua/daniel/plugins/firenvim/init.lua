@@ -1,17 +1,22 @@
+-- Place this in your init.lua or early in your config
 vim.g.firenvim_config = {
 	localSettings = {
 		[".*"] = {
-			priority = 1,
+			priority = 0,
 			takeover = "never",
+		},
+		["https?://github.com/.*"] = {
+			priority = 1,
+			takeover = "always",
 		},
 	},
 }
 
+-- In your plugins configuration file
 return {
 	"glacambre/firenvim",
-	-- Lazy load firenvim
-	-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-	-- lazy = not vim.g.started_by_firenvim,
+	-- Uncomment the next line to enable lazy loading
+	lazy = not vim.g.started_by_firenvim,
 	build = function()
 		vim.fn["firenvim#install"](0)
 	end,
