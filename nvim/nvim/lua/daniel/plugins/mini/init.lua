@@ -1,5 +1,13 @@
--- files config
+return {
+	{
+		"echasnovski/mini.ai",
+		version = false,
+		event = "VeryLazy",
+		config = true,
+	},
+}
 
+-- files config
 -- local file_status, files = pcall(require, "mini.files")
 -- if not file_status then
 -- 	print("mini.files not found")
@@ -57,3 +65,5 @@
 --
 -- animate.setup(animate_setup)
 -- -- gen_timing
+
+-- Only mini ai
