@@ -5,7 +5,7 @@ return {
 	event = "BufEnter",
 
 	opts = {
-		size = 5,
+		size = 20,
 		open_mapping = [[<F7>]],
 		shading_factor = 2,
 		direction = "float",

@@ -2,11 +2,10 @@ return {
 	{
 		"DanielVolchek/tailiscope.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
 		{
 			"nvim-telescope/telescope.nvim",
 			branch = "0.1.x",
-			event = "VeryLazy",
+			event = "VimEnter",
 
 			keys = {
 				{ "<leader>ft", "<cmd>Telescope <cr>", desc = "List All Available Telescope Commands" },
@@ -16,7 +15,12 @@ return {
 				{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "List Open Buffers in Current Neovim Instance" },
 				{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "List Available Help Tags" },
 				{ "<leader>fp", "<cmd>Telescope<cr>", desc = "List Pickers" },
-				{ "<leader>fm", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "List Frecency Projects" },
+				{ "<leader>fm", "<cmd>Telescope treesitter<cr>", desc = "List Treesitter Symbols (In File)" },
+				{
+					"<leader>fM",
+					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+					desc = "List LSP Symbols (In Project)",
+				},
 				{ "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Open Last Picker" },
 				{ "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Open List of Recent Files" },
 				{ "<leader>fn", "<cmd>Noice telescope<cr>", desc = "Open Noice" },
@@ -31,7 +35,7 @@ return {
 				{ "<C-w>b", "<cmd>Telescope buffers<cr>", desc = "List Open Buffers" },
 				{ "<C-w>f", "<cmd>Telescope find_files<cr>", desc = "Find Files in CWD" },
 				{ "<leader>fw", "<cmd>Telescope tailisope categories<cr>" },
-				{ "<leader>fl", "<cmd>Telescope help_string<cr>" },
+				{ "<leader>fl", "<cmd>Telescope registers<cr>" },
 			},
 			config = function()
 				-- import telescope plugin safely
@@ -60,11 +64,9 @@ return {
 						builtin = {
 							include_extensions = true,
 							file_ignore_patterns = {},
-							previewer = false,
-							layout_config = {
-								width = 0.5,
-								height = 0.75,
-							},
+						},
+						registers = {
+							theme = "cursor",
 						},
 						planets = {
 							show_pluto = true,
@@ -74,12 +76,6 @@ return {
 							-- no_ignore = true,
 							hidden = true,
 							follow = true,
-							layout_strategy = "horizontal",
-							layout_config = {
-								width = 0.75,
-								height = 0.75,
-								preview_cutoff = 120,
-							},
 						},
 						buffers = {
 							sort_lastused = true,
@@ -95,7 +91,13 @@ return {
 						},
 					},
 					defaults = {
-						path_display = { "smart" }, -- shorten path (also potentially needs change to truncate)
+						layout_strategy = "horizontal",
+						layout_config = {
+							width = 0.99,
+							height = 0.99,
+							preview_width = 0.7,
+						},
+						path_display = { "truncate", "smart" }, -- shorten path (also potentially needs change to truncate)
 						prompt_prefix = "  ",
 						file_ignore_patterns = { "node_modules", ".git" },
 						selection_caret = "❯ ",
@@ -126,6 +128,11 @@ return {
 				telescope.load_extension("fzf")
 				telescope.load_extension("tailiscope")
 				telescope.load_extension("harpoon")
+
+				-- if nvim is opened without any args (aka not opening a file directly)
+				if #vim.v.argv <= 2 then
+					vim.cmd("Telescope find_files")
+				end
 			end,
 		},
 	},

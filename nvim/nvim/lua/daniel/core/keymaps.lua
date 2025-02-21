@@ -21,7 +21,7 @@ end)
 
 -- fix indentation
 vim.keymap.set("n", "==", "gg=G<C-o>", { desc = "Fix Indentation In File" })
-vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
+-- vim.keymap.set("n", "<leader>=", '"+', { desc = "Write to system buffer" })
 
 -- remap 0 to ^ (go to first character of text instead of first character of line)
 vim.keymap.set("n", "0", "^")
@@ -45,17 +45,30 @@ vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<X1Mouse>", "<C-O>")
 vim.keymap.set("n", "<X2Mouse>", "<C-I>")
 
--- remap :"w to :w (common typo for me)
+-- remap some common typos when I save
 vim.keymap.set("c", '"w', "w")
+vim.keymap.set("c", "'w", "w")
+vim.keymap.set("c", "we", "w")
+
+-- remap c-f to go up half page (ctrl-u functionality) so c-d and c-f can be used to go down and up
+vim.keymap.set("n", "<C-f>", "<C-u>")
+
+-- Bind Q to the macro functionality (q)
+vim.keymap.set("n", "q", "<nop>")
+vim.keymap.set("n", "Q", "q")
 
 -- open buffer in textedit so it is visually selectable in a way that registers for the system
-vim.keymap.set(
-	"v",
-	"<leader>te",
-	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
-	{ desc = "Open in textedit" }
-)
+-- vim.keymap.set(
+-- 	"v",
+-- 	"<leader>te",
+-- 	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
+-- 	{ desc = "Open in textedit" }
+-- )
+--
+-- This is obsolete after raycast added show clipboard content to AI commands
 
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
+
+vim.keymap.set("n", "<leader>nor", "<cmd>set relativenumber!<CR>")

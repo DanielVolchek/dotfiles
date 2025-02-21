@@ -99,9 +99,8 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
-
+	lazy = false,
 	opts = opts,
-
 	keys = {
 		{ "<leader>nt", "<cmd>NvimTreeToggle<CR>" },
 		{
