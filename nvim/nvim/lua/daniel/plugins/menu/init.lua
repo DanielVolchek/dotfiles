@@ -1,0 +1,40 @@
+-- local menu_fn = function(mouse)
+-- 	require("menu.utils").delete_old_menus()
+-- 	-- if mouse then
+-- 	-- 	vim.cmd.exec('"normal! \\<RightMouse>"')
+-- 	-- end
+--
+-- 	local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+-- 	local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
+--
+-- 	require("menu").open(options, { mouse = mouse })
+-- end
+--
+-- vim.keymap.set("n", "<RightMouse>", "<Nop>", { noremap = true })
+-- vim.keymap.set("n", "g<RightMouse>", "<Nop>", { noremap = true })
+-- vim.opt.mousemodel = "popup_setpos"
+--
+-- return {
+-- 	{ "nvzone/volt", lazy = true },
+-- 	{
+-- 		"nvzone/menu",
+-- 		lazy = true,
+-- 		keys = {
+-- 			{
+-- 				"<leader>mm",
+-- 				function()
+-- 					menu_fn(false)
+-- 				end,
+-- 				desc = "Open context specific menu",
+-- 			},
+-- 			-- {
+-- 			-- 	"<RightMouse>",
+-- 			-- 	function()
+-- 			-- 		menu_fn(true)
+-- 			-- 	end,
+-- 			-- 	mode = "n",
+-- 			-- 	desc = "Open context specific menu",
+-- 			-- },
+-- 		},
+-- 	},
+-- }

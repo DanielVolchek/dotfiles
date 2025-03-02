@@ -42,6 +42,7 @@ vim.keymap.set("n", "<C-w>-", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<C-w>_", "<C-w>v", { desc = "Split window vertically" })
 
 -- remap mb4 and mb5 to go up and down in jump list
+-- TODO doesn't work rn, figure out why
 vim.keymap.set("n", "<X1Mouse>", "<C-O>")
 vim.keymap.set("n", "<X2Mouse>", "<C-I>")
 
@@ -57,18 +58,11 @@ vim.keymap.set("n", "<C-f>", "<C-u>")
 vim.keymap.set("n", "q", "<nop>")
 vim.keymap.set("n", "Q", "q")
 
--- open buffer in textedit so it is visually selectable in a way that registers for the system
--- vim.keymap.set(
--- 	"v",
--- 	"<leader>te",
--- 	":'<,'> w !$XDG_CONFIG_HOME/nvim/openfrombuffer.sh<CR>",
--- 	{ desc = "Open in textedit" }
--- )
---
--- This is obsolete after raycast added show clipboard content to AI commands
-
 -- plugin keymaps are defined in their own dirs and sourced in plugindir/init
 -- i.e telescope/init.lua sources telescope/keymap.lua
 -- everything buffer related is in barbar
 
 vim.keymap.set("n", "<leader>nor", "<cmd>set relativenumber!<CR>")
+
+vim.keymap.set("c", "<C-h>", "<Left>")
+vim.keymap.set("c", "<C-l>", "<Right>")
