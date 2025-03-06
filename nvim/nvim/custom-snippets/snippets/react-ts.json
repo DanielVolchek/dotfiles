@@ -1,0 +1,22 @@
+{
+  "My React Functional Component Style": {
+    "prefix": "mrfc",
+    "body": [
+      "import { FC } from \"react\";",
+      "",
+      "type PropsType = {",
+      "  ${1:// PropTypes Here}",
+      "};",
+      "",
+      "export const ${TM_FILENAME_BASE}: FC<PropsType> = (props) => {",
+      "  const {",
+      "    ${1/([\\w]+)\\s*:\\s*[^,]*(,|$)(\\n\\s*)?/$1, /g}",
+      "  } = props;",
+      "$0",
+      "",
+      "  return <div>{/*Content Here*/}</div>;",
+      "};"
+    ],
+    "description": "Creates a React functional component with FC type"
+  }
+}

@@ -13,11 +13,11 @@ vim.g.firenvim_config = {
 }
 
 -- In your plugins configuration file
-return {
-	"glacambre/firenvim",
-	-- Uncomment the next line to enable lazy loading
-	lazy = not vim.g.started_by_firenvim,
-	build = function()
-		vim.fn["firenvim#install"](0)
-	end,
-}
+-- return {
+-- 	"glacambre/firenvim",
+-- 	-- Uncomment the next line to enable lazy loading
+-- 	lazy = not vim.g.started_by_firenvim,
+-- 	build = function()
+-- 		vim.fn["firenvim#install"](0)
+-- 	end,
+-- }

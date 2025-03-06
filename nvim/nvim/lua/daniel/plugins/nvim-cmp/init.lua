@@ -1,7 +1,10 @@
 return {
 	-- import nvim-cmp plugin safely
 
-	"L3MON4D3/LuaSnip", -- snippet engine
+	{
+		"L3MON4D3/LuaSnip",
+		build = "make install_jsregexp",
+	}, -- snippet engine
 	"saadparwaiz1/cmp_luasnip", -- for autocompletion
 	"rafamadriz/friendly-snippets", -- useful snippets
 
@@ -49,6 +52,7 @@ return {
 
 			-- load vs-code like snippets from plugins (e.g. friendly-snippets)
 			require("luasnip/loaders/from_vscode").lazy_load()
+			require("luasnip/loaders/from_vscode").lazy_load({ paths = { "./custom-snippets" } })
 
 			vim.opt.completeopt = "menu,menuone,noselect"
 
@@ -73,28 +77,6 @@ return {
 					["<C-e>"] = cmp.mapping.abort(), -- close completion window
 					["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 					["<TAB>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-					-- super tab functionality (not in youtube nvim video)
-					-- ["<Tab>"] = cmp.mapping(function(fallback) -- use tab for next suggestion
-					-- 	if cmp.visible() then
-					-- 		cmp.select_next_item()
-					-- 	elseif luasnip.expand_or_jumpable() then
-					-- 		luasnip.expand_or_jump()
-					-- 	elseif has_words_before() then
-					-- 		cmp.complete()
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "s" }),
-					--
-					-- ["<S-Tab>"] = cmp.mapping(function(fallback) -- use shift-tab for prev suggestion
-					-- 	if cmp.visible() then
-					-- 		cmp.select_prev_item()
-					-- 	elseif luasnip.jumpable(-1) then
-					-- 		luasnip.jump(-1)
-					-- 	else
-					-- 		fallback()
-					-- 	end
-					-- end, { "i", "s" }),
 				}),
 				-- sources for autocompletion
 				sources = cmp.config.sources({

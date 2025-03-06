@@ -15,9 +15,8 @@ return {
 				{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "List Open Buffers in Current Neovim Instance" },
 				{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "List Available Help Tags" },
 				{ "<leader>fp", "<cmd>Telescope<cr>", desc = "List Pickers" },
-				{ "<leader>fm", "<cmd>Telescope treesitter<cr>", desc = "List Treesitter Symbols (In File)" },
 				{
-					"<leader>fM",
+					"<leader>fm",
 					"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 					desc = "List LSP Symbols (In Project)",
 				},
@@ -96,6 +95,7 @@ return {
 							width = 0.99,
 							height = 0.99,
 							preview_width = 0.7,
+							preview_cutoff = 0,
 						},
 						path_display = { "truncate", "smart" }, -- shorten path (also potentially needs change to truncate)
 						prompt_prefix = "  ",
@@ -131,7 +131,7 @@ return {
 
 				-- if nvim is opened without any args (aka not opening a file directly)
 				if #vim.v.argv <= 2 then
-					vim.cmd("Telescope find_files")
+					vim.cmd("Telescope find_files initial_mode=insert")
 				end
 			end,
 		},
