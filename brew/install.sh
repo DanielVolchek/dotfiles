@@ -14,9 +14,6 @@ else
   echo "Homebrew is already installed...";
 fi
 
-# brew taps
-brew tap homebrew/cask-fonts
-
 # install important packages
 brew install git # the all important git
 brew install gh # github authenticator
@@ -38,6 +35,8 @@ brew install ripgrep # live grep for neovim telescope
 brew install htop # show processes
 brew install fzf # fuzzy finder
 brew install zoxide # better cd command
+brew install cowsay
+brew install fastfetch
 #brew install fontforge # custom nerd font patcher
 #brew install rust # rust lang
 
