@@ -29,6 +29,8 @@ for file in $BASE; do
   ln -sf $DIR/$file $HOME/$hidden
 done
 
+ln -sf $DIR/dadjokes.txt $HOME/.dadjokes
+
 echo "linking zshrc"
 ln -sf $DIR/zshrc $HOME/.zshrc
 echo "linking essential dirs"

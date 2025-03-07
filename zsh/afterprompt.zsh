@@ -1,5 +1,5 @@
 # just for fun
-fastfetch --gap 10
+fastfetch
 dadjoke
  
 # start lightweight spotify client for use with SPT (if env is true)

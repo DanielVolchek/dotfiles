@@ -32,13 +32,14 @@ brew install httpie # http client for terminal
 brew install ripgrep # live grep for neovim telescope
 #brew install spotify-tui # spotify tui
 #brew install spotifyd # spotify daemon
+# brew install fontforge # custom nerd font patcher
 brew install htop # show processes
 brew install fzf # fuzzy finder
 brew install zoxide # better cd command
-brew install cowsay
-brew install fastfetch
-#brew install fontforge # custom nerd font patcher
-#brew install rust # rust lang
+brew install cowsay # just for fun
+brew install fastfetch # just for fun
+brew install rust # rust lang
+brew install go # golang
 
 # install essential casks
 brew install --cask iterm2 # best term emulator
