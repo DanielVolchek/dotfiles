@@ -60,6 +60,7 @@ brew install --cask google-drive # syncs files, at the end because it asks for p
 brew install --cask zoom # video conference software
 brew install --cask linear-linear
 brew install --cask obsidian
+brew install --cask flux
 
 #cascadia code
 #oxygen mono

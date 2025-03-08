@@ -14,11 +14,9 @@ return {
 
 		config = function()
 			require("nightfox").setup({
-				specs = {
-					all = {
-						syntax = {
-							operator = "yellow",
-						},
+				palettes = {
+					carbonfox = {
+						comment = "#d3d3d3", -- Replace with your preferred color
 					},
 				},
 			})

@@ -22,11 +22,11 @@ icons.setup({
 
 -- current fav = tokyonight
 -- current = carbonfox
-local scheme = "colorscheme carbonfox"
-local status, _ = pcall(vim.cmd, scheme)
-if not status then
-	return
-end
+-- local scheme = "colorscheme carbonfox"
+-- local status, _ = pcall(vim.cmd, scheme)
+-- if not status then
+-- 	return
+-- end
 
 local colors = {
 	bg = "#282A36",
